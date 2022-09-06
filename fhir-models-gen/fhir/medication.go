@@ -51,7 +51,7 @@ type MedicationBatch struct {
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	LotNumber         *string     `bson:"lotNumber,omitempty" json:"lotNumber,omitempty"`
-	ExpirationDate    *string     `bson:"expirationDate,omitempty" json:"expirationDate,omitempty"`
+	ExpirationDate    *time.Time  `bson:"expirationDate,omitempty" json:"expirationDate,omitempty"`
 }
 type OtherMedication Medication
 

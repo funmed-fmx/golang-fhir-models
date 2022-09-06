@@ -35,10 +35,10 @@ type Evidence struct {
 	CiteAsReference    *Reference                   `bson:"citeAsReference,omitempty" json:"citeAsReference,omitempty"`
 	CiteAsMarkdown     *string                      `bson:"citeAsMarkdown,omitempty" json:"citeAsMarkdown,omitempty"`
 	Status             PublicationStatus            `bson:"status" json:"status"`
-	Date               *string                      `bson:"date,omitempty" json:"date,omitempty"`
+	Date               *time.Time                   `bson:"date,omitempty" json:"date,omitempty"`
 	UseContext         []UsageContext               `bson:"useContext,omitempty" json:"useContext,omitempty"`
-	ApprovalDate       *string                      `bson:"approvalDate,omitempty" json:"approvalDate,omitempty"`
-	LastReviewDate     *string                      `bson:"lastReviewDate,omitempty" json:"lastReviewDate,omitempty"`
+	ApprovalDate       *time.Time                   `bson:"approvalDate,omitempty" json:"approvalDate,omitempty"`
+	LastReviewDate     *time.Time                   `bson:"lastReviewDate,omitempty" json:"lastReviewDate,omitempty"`
 	Publisher          *string                      `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact            []ContactDetail              `bson:"contact,omitempty" json:"contact,omitempty"`
 	Author             []ContactDetail              `bson:"author,omitempty" json:"author,omitempty"`
@@ -99,7 +99,7 @@ type EvidenceStatisticAttributeEstimate struct {
 	Note              []Annotation                         `bson:"note,omitempty" json:"note,omitempty"`
 	Type              *CodeableConcept                     `bson:"type,omitempty" json:"type,omitempty"`
 	Quantity          *Quantity                            `bson:"quantity,omitempty" json:"quantity,omitempty"`
-	Level             *string                              `bson:"level,omitempty" json:"level,omitempty"`
+	Level             *float64                             `bson:"level,omitempty" json:"level,omitempty"`
 	Range             *Range                               `bson:"range,omitempty" json:"range,omitempty"`
 	AttributeEstimate []EvidenceStatisticAttributeEstimate `bson:"attributeEstimate,omitempty" json:"attributeEstimate,omitempty"`
 }

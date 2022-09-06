@@ -34,12 +34,12 @@ type FamilyMemberHistory struct {
 	Status                FamilyHistoryStatus            `bson:"status" json:"status"`
 	DataAbsentReason      *CodeableConcept               `bson:"dataAbsentReason,omitempty" json:"dataAbsentReason,omitempty"`
 	Patient               Reference                      `bson:"patient" json:"patient"`
-	Date                  *string                        `bson:"date,omitempty" json:"date,omitempty"`
+	Date                  *time.Time                     `bson:"date,omitempty" json:"date,omitempty"`
 	Name                  *string                        `bson:"name,omitempty" json:"name,omitempty"`
 	Relationship          CodeableConcept                `bson:"relationship" json:"relationship"`
 	Sex                   *CodeableConcept               `bson:"sex,omitempty" json:"sex,omitempty"`
 	BornPeriod            *Period                        `bson:"bornPeriod,omitempty" json:"bornPeriod,omitempty"`
-	BornDate              *string                        `bson:"bornDate,omitempty" json:"bornDate,omitempty"`
+	BornDate              *time.Time                     `bson:"bornDate,omitempty" json:"bornDate,omitempty"`
 	BornString            *string                        `bson:"bornString,omitempty" json:"bornString,omitempty"`
 	AgeAge                *Age                           `bson:"ageAge,omitempty" json:"ageAge,omitempty"`
 	AgeRange              *Range                         `bson:"ageRange,omitempty" json:"ageRange,omitempty"`
@@ -48,7 +48,7 @@ type FamilyMemberHistory struct {
 	DeceasedBoolean       *bool                          `bson:"deceasedBoolean,omitempty" json:"deceasedBoolean,omitempty"`
 	DeceasedAge           *Age                           `bson:"deceasedAge,omitempty" json:"deceasedAge,omitempty"`
 	DeceasedRange         *Range                         `bson:"deceasedRange,omitempty" json:"deceasedRange,omitempty"`
-	DeceasedDate          *string                        `bson:"deceasedDate,omitempty" json:"deceasedDate,omitempty"`
+	DeceasedDate          *time.Time                     `bson:"deceasedDate,omitempty" json:"deceasedDate,omitempty"`
 	DeceasedString        *string                        `bson:"deceasedString,omitempty" json:"deceasedString,omitempty"`
 	ReasonCode            []CodeableConcept              `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`
 	ReasonReference       []Reference                    `bson:"reasonReference,omitempty" json:"reasonReference,omitempty"`

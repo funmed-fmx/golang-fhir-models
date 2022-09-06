@@ -32,9 +32,9 @@ type CoverageEligibilityResponse struct {
 	Status            FinancialResourceStatusCodes           `bson:"status" json:"status"`
 	Purpose           []EligibilityResponsePurpose           `bson:"purpose" json:"purpose"`
 	Patient           Reference                              `bson:"patient" json:"patient"`
-	ServicedDate      *string                                `bson:"servicedDate,omitempty" json:"servicedDate,omitempty"`
+	ServicedDate      *time.Time                             `bson:"servicedDate,omitempty" json:"servicedDate,omitempty"`
 	ServicedPeriod    *Period                                `bson:"servicedPeriod,omitempty" json:"servicedPeriod,omitempty"`
-	Created           string                                 `bson:"created" json:"created"`
+	Created           time.Time                              `bson:"created" json:"created"`
 	Requestor         *Reference                             `bson:"requestor,omitempty" json:"requestor,omitempty"`
 	Request           Reference                              `bson:"request" json:"request"`
 	Outcome           RemittanceOutcome                      `bson:"outcome" json:"outcome"`

@@ -23,6 +23,6 @@ type Annotation struct {
 	Extension       []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	AuthorReference *Reference  `bson:"authorReference,omitempty" json:"authorReference,omitempty"`
 	AuthorString    *string     `bson:"authorString,omitempty" json:"authorString,omitempty"`
-	Time            *string     `bson:"time,omitempty" json:"time,omitempty"`
+	Time            *time.Time  `bson:"time,omitempty" json:"time,omitempty"`
 	Text            string      `bson:"text" json:"text"`
 }

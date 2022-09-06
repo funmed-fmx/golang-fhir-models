@@ -454,7 +454,8 @@ func addFieldStatement(
 			var err error
 			file.Type().Id(backboneElementName).StructFunc(func(childFields *jen.Group) {
 				//var err error
-				elementIndex, err = appendFields(resources, requiredTypes, requiredValueSetBindings, file, childFields, backboneElementName, elementDefinitions, elementIndex+1, level+1)
+				elementIndex, err = appendFields(resources, requiredTypes, requiredValueSetBindings, file, childFields,
+					backboneElementName, elementDefinitions, elementIndex+1, level+1)
 			})
 			if err != nil {
 				return 0, err
@@ -498,11 +499,11 @@ func typeCodeToTypeIdentifier(typeCode string) string {
 	case "code":
 		return "string"
 	case "date":
-		return "string"
+		return "time.Time"
 	case "dateTime":
-		return "string"
+		return "time.Time"
 	case "decimal":
-		return "string"
+		return "float64"
 	case "id":
 		return "string"
 	case "instant":

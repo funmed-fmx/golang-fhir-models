@@ -33,7 +33,7 @@ type PackagedProductDefinition struct {
 	Type                  *CodeableConcept                               `bson:"type,omitempty" json:"type,omitempty"`
 	PackageFor            []Reference                                    `bson:"packageFor,omitempty" json:"packageFor,omitempty"`
 	Status                *CodeableConcept                               `bson:"status,omitempty" json:"status,omitempty"`
-	StatusDate            *string                                        `bson:"statusDate,omitempty" json:"statusDate,omitempty"`
+	StatusDate            *time.Time                                     `bson:"statusDate,omitempty" json:"statusDate,omitempty"`
 	ContainedItemQuantity []Quantity                                     `bson:"containedItemQuantity,omitempty" json:"containedItemQuantity,omitempty"`
 	Description           *string                                        `bson:"description,omitempty" json:"description,omitempty"`
 	LegalStatusOfSupply   []PackagedProductDefinitionLegalStatusOfSupply `bson:"legalStatusOfSupply,omitempty" json:"legalStatusOfSupply,omitempty"`
@@ -81,7 +81,7 @@ type PackagedProductDefinitionPackageProperty struct {
 	Type                 CodeableConcept  `bson:"type" json:"type"`
 	ValueCodeableConcept *CodeableConcept `bson:"valueCodeableConcept,omitempty" json:"valueCodeableConcept,omitempty"`
 	ValueQuantity        *Quantity        `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
-	ValueDate            *string          `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
+	ValueDate            *time.Time       `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
 	ValueBoolean         *bool            `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
 	ValueAttachment      *Attachment      `bson:"valueAttachment,omitempty" json:"valueAttachment,omitempty"`
 }

@@ -42,9 +42,9 @@ type CommunicationRequest struct {
 	About              []Reference                   `bson:"about,omitempty" json:"about,omitempty"`
 	Encounter          *Reference                    `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	Payload            []CommunicationRequestPayload `bson:"payload,omitempty" json:"payload,omitempty"`
-	OccurrenceDateTime *string                       `bson:"occurrenceDateTime,omitempty" json:"occurrenceDateTime,omitempty"`
+	OccurrenceDateTime *time.Time                    `bson:"occurrenceDateTime,omitempty" json:"occurrenceDateTime,omitempty"`
 	OccurrencePeriod   *Period                       `bson:"occurrencePeriod,omitempty" json:"occurrencePeriod,omitempty"`
-	AuthoredOn         *string                       `bson:"authoredOn,omitempty" json:"authoredOn,omitempty"`
+	AuthoredOn         *time.Time                    `bson:"authoredOn,omitempty" json:"authoredOn,omitempty"`
 	Requester          *Reference                    `bson:"requester,omitempty" json:"requester,omitempty"`
 	Recipient          []Reference                   `bson:"recipient,omitempty" json:"recipient,omitempty"`
 	Sender             *Reference                    `bson:"sender,omitempty" json:"sender,omitempty"`

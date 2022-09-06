@@ -32,10 +32,10 @@ type PaymentNotice struct {
 	Status            FinancialResourceStatusCodes `bson:"status" json:"status"`
 	Request           *Reference                   `bson:"request,omitempty" json:"request,omitempty"`
 	Response          *Reference                   `bson:"response,omitempty" json:"response,omitempty"`
-	Created           string                       `bson:"created" json:"created"`
+	Created           time.Time                    `bson:"created" json:"created"`
 	Provider          *Reference                   `bson:"provider,omitempty" json:"provider,omitempty"`
 	Payment           Reference                    `bson:"payment" json:"payment"`
-	PaymentDate       *string                      `bson:"paymentDate,omitempty" json:"paymentDate,omitempty"`
+	PaymentDate       *time.Time                   `bson:"paymentDate,omitempty" json:"paymentDate,omitempty"`
 	Payee             *Reference                   `bson:"payee,omitempty" json:"payee,omitempty"`
 	Recipient         Reference                    `bson:"recipient" json:"recipient"`
 	Amount            Money                        `bson:"amount" json:"amount"`

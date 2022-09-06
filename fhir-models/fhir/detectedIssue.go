@@ -33,7 +33,7 @@ type DetectedIssue struct {
 	Code               *CodeableConcept          `bson:"code,omitempty" json:"code,omitempty"`
 	Severity           *DetectedIssueSeverity    `bson:"severity,omitempty" json:"severity,omitempty"`
 	Patient            *Reference                `bson:"patient,omitempty" json:"patient,omitempty"`
-	IdentifiedDateTime *string                   `bson:"identifiedDateTime,omitempty" json:"identifiedDateTime,omitempty"`
+	IdentifiedDateTime *time.Time                `bson:"identifiedDateTime,omitempty" json:"identifiedDateTime,omitempty"`
 	IdentifiedPeriod   *Period                   `bson:"identifiedPeriod,omitempty" json:"identifiedPeriod,omitempty"`
 	Author             *Reference                `bson:"author,omitempty" json:"author,omitempty"`
 	Implicated         []Reference               `bson:"implicated,omitempty" json:"implicated,omitempty"`
@@ -54,7 +54,7 @@ type DetectedIssueMitigation struct {
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Action            CodeableConcept `bson:"action" json:"action"`
-	Date              *string         `bson:"date,omitempty" json:"date,omitempty"`
+	Date              *time.Time      `bson:"date,omitempty" json:"date,omitempty"`
 	Author            *Reference      `bson:"author,omitempty" json:"author,omitempty"`
 }
 type OtherDetectedIssue DetectedIssue

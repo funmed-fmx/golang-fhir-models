@@ -34,15 +34,15 @@ type Immunization struct {
 	VaccineCode        CodeableConcept               `bson:"vaccineCode" json:"vaccineCode"`
 	Patient            Reference                     `bson:"patient" json:"patient"`
 	Encounter          *Reference                    `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	OccurrenceDateTime string                        `bson:"occurrenceDateTime" json:"occurrenceDateTime"`
+	OccurrenceDateTime time.Time                     `bson:"occurrenceDateTime" json:"occurrenceDateTime"`
 	OccurrenceString   string                        `bson:"occurrenceString" json:"occurrenceString"`
-	Recorded           *string                       `bson:"recorded,omitempty" json:"recorded,omitempty"`
+	Recorded           *time.Time                    `bson:"recorded,omitempty" json:"recorded,omitempty"`
 	PrimarySource      *bool                         `bson:"primarySource,omitempty" json:"primarySource,omitempty"`
 	ReportOrigin       *CodeableConcept              `bson:"reportOrigin,omitempty" json:"reportOrigin,omitempty"`
 	Location           *Reference                    `bson:"location,omitempty" json:"location,omitempty"`
 	Manufacturer       *Reference                    `bson:"manufacturer,omitempty" json:"manufacturer,omitempty"`
 	LotNumber          *string                       `bson:"lotNumber,omitempty" json:"lotNumber,omitempty"`
-	ExpirationDate     *string                       `bson:"expirationDate,omitempty" json:"expirationDate,omitempty"`
+	ExpirationDate     *time.Time                    `bson:"expirationDate,omitempty" json:"expirationDate,omitempty"`
 	Site               *CodeableConcept              `bson:"site,omitempty" json:"site,omitempty"`
 	Route              *CodeableConcept              `bson:"route,omitempty" json:"route,omitempty"`
 	DoseQuantity       *Quantity                     `bson:"doseQuantity,omitempty" json:"doseQuantity,omitempty"`
@@ -71,14 +71,14 @@ type ImmunizationEducation struct {
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	DocumentType      *string     `bson:"documentType,omitempty" json:"documentType,omitempty"`
 	Reference         *string     `bson:"reference,omitempty" json:"reference,omitempty"`
-	PublicationDate   *string     `bson:"publicationDate,omitempty" json:"publicationDate,omitempty"`
-	PresentationDate  *string     `bson:"presentationDate,omitempty" json:"presentationDate,omitempty"`
+	PublicationDate   *time.Time  `bson:"publicationDate,omitempty" json:"publicationDate,omitempty"`
+	PresentationDate  *time.Time  `bson:"presentationDate,omitempty" json:"presentationDate,omitempty"`
 }
 type ImmunizationReaction struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Date              *string     `bson:"date,omitempty" json:"date,omitempty"`
+	Date              *time.Time  `bson:"date,omitempty" json:"date,omitempty"`
 	Detail            *Reference  `bson:"detail,omitempty" json:"detail,omitempty"`
 	Reported          *bool       `bson:"reported,omitempty" json:"reported,omitempty"`
 }

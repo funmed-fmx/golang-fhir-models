@@ -40,7 +40,7 @@ type PlanDefinition struct {
 	SubjectCodeableConcept *CodeableConcept       `bson:"subjectCodeableConcept,omitempty" json:"subjectCodeableConcept,omitempty"`
 	SubjectReference       *Reference             `bson:"subjectReference,omitempty" json:"subjectReference,omitempty"`
 	SubjectCanonical       *string                `bson:"subjectCanonical,omitempty" json:"subjectCanonical,omitempty"`
-	Date                   *string                `bson:"date,omitempty" json:"date,omitempty"`
+	Date                   *time.Time             `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher              *string                `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact                []ContactDetail        `bson:"contact,omitempty" json:"contact,omitempty"`
 	Description            *string                `bson:"description,omitempty" json:"description,omitempty"`
@@ -49,8 +49,8 @@ type PlanDefinition struct {
 	Purpose                *string                `bson:"purpose,omitempty" json:"purpose,omitempty"`
 	Usage                  *string                `bson:"usage,omitempty" json:"usage,omitempty"`
 	Copyright              *string                `bson:"copyright,omitempty" json:"copyright,omitempty"`
-	ApprovalDate           *string                `bson:"approvalDate,omitempty" json:"approvalDate,omitempty"`
-	LastReviewDate         *string                `bson:"lastReviewDate,omitempty" json:"lastReviewDate,omitempty"`
+	ApprovalDate           *time.Time             `bson:"approvalDate,omitempty" json:"approvalDate,omitempty"`
+	LastReviewDate         *time.Time             `bson:"lastReviewDate,omitempty" json:"lastReviewDate,omitempty"`
 	EffectivePeriod        *Period                `bson:"effectivePeriod,omitempty" json:"effectivePeriod,omitempty"`
 	Topic                  []CodeableConcept      `bson:"topic,omitempty" json:"topic,omitempty"`
 	Author                 []ContactDetail        `bson:"author,omitempty" json:"author,omitempty"`
@@ -105,7 +105,7 @@ type PlanDefinitionAction struct {
 	Input                  []DataRequirement                   `bson:"input,omitempty" json:"input,omitempty"`
 	Output                 []DataRequirement                   `bson:"output,omitempty" json:"output,omitempty"`
 	RelatedAction          []PlanDefinitionActionRelatedAction `bson:"relatedAction,omitempty" json:"relatedAction,omitempty"`
-	TimingDateTime         *string                             `bson:"timingDateTime,omitempty" json:"timingDateTime,omitempty"`
+	TimingDateTime         *time.Time                          `bson:"timingDateTime,omitempty" json:"timingDateTime,omitempty"`
 	TimingAge              *Age                                `bson:"timingAge,omitempty" json:"timingAge,omitempty"`
 	TimingPeriod           *Period                             `bson:"timingPeriod,omitempty" json:"timingPeriod,omitempty"`
 	TimingDuration         *Duration                           `bson:"timingDuration,omitempty" json:"timingDuration,omitempty"`

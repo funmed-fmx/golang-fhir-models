@@ -35,7 +35,7 @@ type ExplanationOfBenefit struct {
 	Use                   Use                                    `bson:"use" json:"use"`
 	Patient               Reference                              `bson:"patient" json:"patient"`
 	BillablePeriod        *Period                                `bson:"billablePeriod,omitempty" json:"billablePeriod,omitempty"`
-	Created               string                                 `bson:"created" json:"created"`
+	Created               time.Time                              `bson:"created" json:"created"`
 	Enterer               *Reference                             `bson:"enterer,omitempty" json:"enterer,omitempty"`
 	Insurer               Reference                              `bson:"insurer" json:"insurer"`
 	Provider              Reference                              `bson:"provider" json:"provider"`
@@ -104,7 +104,7 @@ type ExplanationOfBenefitSupportingInfo struct {
 	Sequence          int              `bson:"sequence" json:"sequence"`
 	Category          CodeableConcept  `bson:"category" json:"category"`
 	Code              *CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
-	TimingDate        *string          `bson:"timingDate,omitempty" json:"timingDate,omitempty"`
+	TimingDate        *time.Time       `bson:"timingDate,omitempty" json:"timingDate,omitempty"`
 	TimingPeriod      *Period          `bson:"timingPeriod,omitempty" json:"timingPeriod,omitempty"`
 	ValueBoolean      *bool            `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
 	ValueString       *string          `bson:"valueString,omitempty" json:"valueString,omitempty"`
@@ -130,7 +130,7 @@ type ExplanationOfBenefitProcedure struct {
 	ModifierExtension        []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Sequence                 int               `bson:"sequence" json:"sequence"`
 	Type                     []CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
-	Date                     *string           `bson:"date,omitempty" json:"date,omitempty"`
+	Date                     *time.Time        `bson:"date,omitempty" json:"date,omitempty"`
 	ProcedureCodeableConcept CodeableConcept   `bson:"procedureCodeableConcept" json:"procedureCodeableConcept"`
 	ProcedureReference       Reference         `bson:"procedureReference" json:"procedureReference"`
 	Udi                      []Reference       `bson:"udi,omitempty" json:"udi,omitempty"`
@@ -147,7 +147,7 @@ type ExplanationOfBenefitAccident struct {
 	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Date              *string          `bson:"date,omitempty" json:"date,omitempty"`
+	Date              *time.Time       `bson:"date,omitempty" json:"date,omitempty"`
 	Type              *CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
 	LocationAddress   *Address         `bson:"locationAddress,omitempty" json:"locationAddress,omitempty"`
 	LocationReference *Reference       `bson:"locationReference,omitempty" json:"locationReference,omitempty"`
@@ -166,14 +166,14 @@ type ExplanationOfBenefitItem struct {
 	ProductOrService        CodeableConcept                        `bson:"productOrService" json:"productOrService"`
 	Modifier                []CodeableConcept                      `bson:"modifier,omitempty" json:"modifier,omitempty"`
 	ProgramCode             []CodeableConcept                      `bson:"programCode,omitempty" json:"programCode,omitempty"`
-	ServicedDate            *string                                `bson:"servicedDate,omitempty" json:"servicedDate,omitempty"`
+	ServicedDate            *time.Time                             `bson:"servicedDate,omitempty" json:"servicedDate,omitempty"`
 	ServicedPeriod          *Period                                `bson:"servicedPeriod,omitempty" json:"servicedPeriod,omitempty"`
 	LocationCodeableConcept *CodeableConcept                       `bson:"locationCodeableConcept,omitempty" json:"locationCodeableConcept,omitempty"`
 	LocationAddress         *Address                               `bson:"locationAddress,omitempty" json:"locationAddress,omitempty"`
 	LocationReference       *Reference                             `bson:"locationReference,omitempty" json:"locationReference,omitempty"`
 	Quantity                *Quantity                              `bson:"quantity,omitempty" json:"quantity,omitempty"`
 	UnitPrice               *Money                                 `bson:"unitPrice,omitempty" json:"unitPrice,omitempty"`
-	Factor                  *string                                `bson:"factor,omitempty" json:"factor,omitempty"`
+	Factor                  *float64                               `bson:"factor,omitempty" json:"factor,omitempty"`
 	Net                     *Money                                 `bson:"net,omitempty" json:"net,omitempty"`
 	Udi                     []Reference                            `bson:"udi,omitempty" json:"udi,omitempty"`
 	BodySite                *CodeableConcept                       `bson:"bodySite,omitempty" json:"bodySite,omitempty"`
@@ -190,7 +190,7 @@ type ExplanationOfBenefitItemAdjudication struct {
 	Category          CodeableConcept  `bson:"category" json:"category"`
 	Reason            *CodeableConcept `bson:"reason,omitempty" json:"reason,omitempty"`
 	Amount            *Money           `bson:"amount,omitempty" json:"amount,omitempty"`
-	Value             *string          `bson:"value,omitempty" json:"value,omitempty"`
+	Value             *float64         `bson:"value,omitempty" json:"value,omitempty"`
 }
 type ExplanationOfBenefitItemDetail struct {
 	Id                *string                                   `bson:"id,omitempty" json:"id,omitempty"`
@@ -204,7 +204,7 @@ type ExplanationOfBenefitItemDetail struct {
 	ProgramCode       []CodeableConcept                         `bson:"programCode,omitempty" json:"programCode,omitempty"`
 	Quantity          *Quantity                                 `bson:"quantity,omitempty" json:"quantity,omitempty"`
 	UnitPrice         *Money                                    `bson:"unitPrice,omitempty" json:"unitPrice,omitempty"`
-	Factor            *string                                   `bson:"factor,omitempty" json:"factor,omitempty"`
+	Factor            *float64                                  `bson:"factor,omitempty" json:"factor,omitempty"`
 	Net               *Money                                    `bson:"net,omitempty" json:"net,omitempty"`
 	Udi               []Reference                               `bson:"udi,omitempty" json:"udi,omitempty"`
 	NoteNumber        []int                                     `bson:"noteNumber,omitempty" json:"noteNumber,omitempty"`
@@ -223,7 +223,7 @@ type ExplanationOfBenefitItemDetailSubDetail struct {
 	ProgramCode       []CodeableConcept                      `bson:"programCode,omitempty" json:"programCode,omitempty"`
 	Quantity          *Quantity                              `bson:"quantity,omitempty" json:"quantity,omitempty"`
 	UnitPrice         *Money                                 `bson:"unitPrice,omitempty" json:"unitPrice,omitempty"`
-	Factor            *string                                `bson:"factor,omitempty" json:"factor,omitempty"`
+	Factor            *float64                               `bson:"factor,omitempty" json:"factor,omitempty"`
 	Net               *Money                                 `bson:"net,omitempty" json:"net,omitempty"`
 	Udi               []Reference                            `bson:"udi,omitempty" json:"udi,omitempty"`
 	NoteNumber        []int                                  `bson:"noteNumber,omitempty" json:"noteNumber,omitempty"`
@@ -240,14 +240,14 @@ type ExplanationOfBenefitAddItem struct {
 	ProductOrService        CodeableConcept                        `bson:"productOrService" json:"productOrService"`
 	Modifier                []CodeableConcept                      `bson:"modifier,omitempty" json:"modifier,omitempty"`
 	ProgramCode             []CodeableConcept                      `bson:"programCode,omitempty" json:"programCode,omitempty"`
-	ServicedDate            *string                                `bson:"servicedDate,omitempty" json:"servicedDate,omitempty"`
+	ServicedDate            *time.Time                             `bson:"servicedDate,omitempty" json:"servicedDate,omitempty"`
 	ServicedPeriod          *Period                                `bson:"servicedPeriod,omitempty" json:"servicedPeriod,omitempty"`
 	LocationCodeableConcept *CodeableConcept                       `bson:"locationCodeableConcept,omitempty" json:"locationCodeableConcept,omitempty"`
 	LocationAddress         *Address                               `bson:"locationAddress,omitempty" json:"locationAddress,omitempty"`
 	LocationReference       *Reference                             `bson:"locationReference,omitempty" json:"locationReference,omitempty"`
 	Quantity                *Quantity                              `bson:"quantity,omitempty" json:"quantity,omitempty"`
 	UnitPrice               *Money                                 `bson:"unitPrice,omitempty" json:"unitPrice,omitempty"`
-	Factor                  *string                                `bson:"factor,omitempty" json:"factor,omitempty"`
+	Factor                  *float64                               `bson:"factor,omitempty" json:"factor,omitempty"`
 	Net                     *Money                                 `bson:"net,omitempty" json:"net,omitempty"`
 	BodySite                *CodeableConcept                       `bson:"bodySite,omitempty" json:"bodySite,omitempty"`
 	SubSite                 []CodeableConcept                      `bson:"subSite,omitempty" json:"subSite,omitempty"`
@@ -263,7 +263,7 @@ type ExplanationOfBenefitAddItemDetail struct {
 	Modifier          []CodeableConcept                            `bson:"modifier,omitempty" json:"modifier,omitempty"`
 	Quantity          *Quantity                                    `bson:"quantity,omitempty" json:"quantity,omitempty"`
 	UnitPrice         *Money                                       `bson:"unitPrice,omitempty" json:"unitPrice,omitempty"`
-	Factor            *string                                      `bson:"factor,omitempty" json:"factor,omitempty"`
+	Factor            *float64                                     `bson:"factor,omitempty" json:"factor,omitempty"`
 	Net               *Money                                       `bson:"net,omitempty" json:"net,omitempty"`
 	NoteNumber        []int                                        `bson:"noteNumber,omitempty" json:"noteNumber,omitempty"`
 	Adjudication      []ExplanationOfBenefitItemAdjudication       `bson:"adjudication,omitempty" json:"adjudication,omitempty"`
@@ -277,7 +277,7 @@ type ExplanationOfBenefitAddItemDetailSubDetail struct {
 	Modifier          []CodeableConcept                      `bson:"modifier,omitempty" json:"modifier,omitempty"`
 	Quantity          *Quantity                              `bson:"quantity,omitempty" json:"quantity,omitempty"`
 	UnitPrice         *Money                                 `bson:"unitPrice,omitempty" json:"unitPrice,omitempty"`
-	Factor            *string                                `bson:"factor,omitempty" json:"factor,omitempty"`
+	Factor            *float64                               `bson:"factor,omitempty" json:"factor,omitempty"`
 	Net               *Money                                 `bson:"net,omitempty" json:"net,omitempty"`
 	NoteNumber        []int                                  `bson:"noteNumber,omitempty" json:"noteNumber,omitempty"`
 	Adjudication      []ExplanationOfBenefitItemAdjudication `bson:"adjudication,omitempty" json:"adjudication,omitempty"`
@@ -296,7 +296,7 @@ type ExplanationOfBenefitPayment struct {
 	Type              *CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
 	Adjustment        *Money           `bson:"adjustment,omitempty" json:"adjustment,omitempty"`
 	AdjustmentReason  *CodeableConcept `bson:"adjustmentReason,omitempty" json:"adjustmentReason,omitempty"`
-	Date              *string          `bson:"date,omitempty" json:"date,omitempty"`
+	Date              *time.Time       `bson:"date,omitempty" json:"date,omitempty"`
 	Amount            *Money           `bson:"amount,omitempty" json:"amount,omitempty"`
 	Identifier        *Identifier      `bson:"identifier,omitempty" json:"identifier,omitempty"`
 }

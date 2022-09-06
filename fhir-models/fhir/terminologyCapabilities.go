@@ -34,7 +34,7 @@ type TerminologyCapabilities struct {
 	Title             *string                                `bson:"title,omitempty" json:"title,omitempty"`
 	Status            PublicationStatus                      `bson:"status" json:"status"`
 	Experimental      *bool                                  `bson:"experimental,omitempty" json:"experimental,omitempty"`
-	Date              string                                 `bson:"date" json:"date"`
+	Date              time.Time                              `bson:"date" json:"date"`
 	Publisher         *string                                `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact           []ContactDetail                        `bson:"contact,omitempty" json:"contact,omitempty"`
 	Description       *string                                `bson:"description,omitempty" json:"description,omitempty"`

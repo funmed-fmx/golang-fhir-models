@@ -40,7 +40,7 @@ type RequestGroup struct {
 	Code                  *CodeableConcept     `bson:"code,omitempty" json:"code,omitempty"`
 	Subject               *Reference           `bson:"subject,omitempty" json:"subject,omitempty"`
 	Encounter             *Reference           `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	AuthoredOn            *string              `bson:"authoredOn,omitempty" json:"authoredOn,omitempty"`
+	AuthoredOn            *time.Time           `bson:"authoredOn,omitempty" json:"authoredOn,omitempty"`
 	Author                *Reference           `bson:"author,omitempty" json:"author,omitempty"`
 	ReasonCode            []CodeableConcept    `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`
 	ReasonReference       []Reference          `bson:"reasonReference,omitempty" json:"reasonReference,omitempty"`
@@ -60,7 +60,7 @@ type RequestGroupAction struct {
 	Documentation       []RelatedArtifact                 `bson:"documentation,omitempty" json:"documentation,omitempty"`
 	Condition           []RequestGroupActionCondition     `bson:"condition,omitempty" json:"condition,omitempty"`
 	RelatedAction       []RequestGroupActionRelatedAction `bson:"relatedAction,omitempty" json:"relatedAction,omitempty"`
-	TimingDateTime      *string                           `bson:"timingDateTime,omitempty" json:"timingDateTime,omitempty"`
+	TimingDateTime      *time.Time                        `bson:"timingDateTime,omitempty" json:"timingDateTime,omitempty"`
 	TimingAge           *Age                              `bson:"timingAge,omitempty" json:"timingAge,omitempty"`
 	TimingPeriod        *Period                           `bson:"timingPeriod,omitempty" json:"timingPeriod,omitempty"`
 	TimingDuration      *Duration                         `bson:"timingDuration,omitempty" json:"timingDuration,omitempty"`

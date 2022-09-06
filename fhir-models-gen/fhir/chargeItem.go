@@ -36,7 +36,7 @@ type ChargeItem struct {
 	Code                   CodeableConcept       `bson:"code" json:"code"`
 	Subject                Reference             `bson:"subject" json:"subject"`
 	Context                *Reference            `bson:"context,omitempty" json:"context,omitempty"`
-	OccurrenceDateTime     *string               `bson:"occurrenceDateTime,omitempty" json:"occurrenceDateTime,omitempty"`
+	OccurrenceDateTime     *time.Time            `bson:"occurrenceDateTime,omitempty" json:"occurrenceDateTime,omitempty"`
 	OccurrencePeriod       *Period               `bson:"occurrencePeriod,omitempty" json:"occurrencePeriod,omitempty"`
 	OccurrenceTiming       *Timing               `bson:"occurrenceTiming,omitempty" json:"occurrenceTiming,omitempty"`
 	Performer              []ChargeItemPerformer `bson:"performer,omitempty" json:"performer,omitempty"`
@@ -45,11 +45,11 @@ type ChargeItem struct {
 	CostCenter             *Reference            `bson:"costCenter,omitempty" json:"costCenter,omitempty"`
 	Quantity               *Quantity             `bson:"quantity,omitempty" json:"quantity,omitempty"`
 	Bodysite               []CodeableConcept     `bson:"bodysite,omitempty" json:"bodysite,omitempty"`
-	FactorOverride         *string               `bson:"factorOverride,omitempty" json:"factorOverride,omitempty"`
+	FactorOverride         *float64              `bson:"factorOverride,omitempty" json:"factorOverride,omitempty"`
 	PriceOverride          *Money                `bson:"priceOverride,omitempty" json:"priceOverride,omitempty"`
 	OverrideReason         *string               `bson:"overrideReason,omitempty" json:"overrideReason,omitempty"`
 	Enterer                *Reference            `bson:"enterer,omitempty" json:"enterer,omitempty"`
-	EnteredDate            *string               `bson:"enteredDate,omitempty" json:"enteredDate,omitempty"`
+	EnteredDate            *time.Time            `bson:"enteredDate,omitempty" json:"enteredDate,omitempty"`
 	Reason                 []CodeableConcept     `bson:"reason,omitempty" json:"reason,omitempty"`
 	Service                []Reference           `bson:"service,omitempty" json:"service,omitempty"`
 	ProductReference       *Reference            `bson:"productReference,omitempty" json:"productReference,omitempty"`

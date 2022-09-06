@@ -33,9 +33,9 @@ type Patient struct {
 	Name                 []HumanName            `bson:"name,omitempty" json:"name,omitempty"`
 	Telecom              []ContactPoint         `bson:"telecom,omitempty" json:"telecom,omitempty"`
 	Gender               *AdministrativeGender  `bson:"gender,omitempty" json:"gender,omitempty"`
-	BirthDate            *string                `bson:"birthDate,omitempty" json:"birthDate,omitempty"`
+	BirthDate            *time.Time             `bson:"birthDate,omitempty" json:"birthDate,omitempty"`
 	DeceasedBoolean      *bool                  `bson:"deceasedBoolean,omitempty" json:"deceasedBoolean,omitempty"`
-	DeceasedDateTime     *string                `bson:"deceasedDateTime,omitempty" json:"deceasedDateTime,omitempty"`
+	DeceasedDateTime     *time.Time             `bson:"deceasedDateTime,omitempty" json:"deceasedDateTime,omitempty"`
 	Address              []Address              `bson:"address,omitempty" json:"address,omitempty"`
 	MaritalStatus        *CodeableConcept       `bson:"maritalStatus,omitempty" json:"maritalStatus,omitempty"`
 	MultipleBirthBoolean *bool                  `bson:"multipleBirthBoolean,omitempty" json:"multipleBirthBoolean,omitempty"`

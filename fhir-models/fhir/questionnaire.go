@@ -37,7 +37,7 @@ type Questionnaire struct {
 	Status            PublicationStatus   `bson:"status" json:"status"`
 	Experimental      *bool               `bson:"experimental,omitempty" json:"experimental,omitempty"`
 	SubjectType       []ResourceType      `bson:"subjectType,omitempty" json:"subjectType,omitempty"`
-	Date              *string             `bson:"date,omitempty" json:"date,omitempty"`
+	Date              *time.Time          `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher         *string             `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact           []ContactDetail     `bson:"contact,omitempty" json:"contact,omitempty"`
 	Description       *string             `bson:"description,omitempty" json:"description,omitempty"`
@@ -45,8 +45,8 @@ type Questionnaire struct {
 	Jurisdiction      []CodeableConcept   `bson:"jurisdiction,omitempty" json:"jurisdiction,omitempty"`
 	Purpose           *string             `bson:"purpose,omitempty" json:"purpose,omitempty"`
 	Copyright         *string             `bson:"copyright,omitempty" json:"copyright,omitempty"`
-	ApprovalDate      *string             `bson:"approvalDate,omitempty" json:"approvalDate,omitempty"`
-	LastReviewDate    *string             `bson:"lastReviewDate,omitempty" json:"lastReviewDate,omitempty"`
+	ApprovalDate      *time.Time          `bson:"approvalDate,omitempty" json:"approvalDate,omitempty"`
+	LastReviewDate    *time.Time          `bson:"lastReviewDate,omitempty" json:"lastReviewDate,omitempty"`
 	EffectivePeriod   *Period             `bson:"effectivePeriod,omitempty" json:"effectivePeriod,omitempty"`
 	Code              []Coding            `bson:"code,omitempty" json:"code,omitempty"`
 	Item              []QuestionnaireItem `bson:"item,omitempty" json:"item,omitempty"`
@@ -79,10 +79,10 @@ type QuestionnaireItemEnableWhen struct {
 	Question          string                    `bson:"question" json:"question"`
 	Operator          QuestionnaireItemOperator `bson:"operator" json:"operator"`
 	AnswerBoolean     bool                      `bson:"answerBoolean" json:"answerBoolean"`
-	AnswerDecimal     string                    `bson:"answerDecimal" json:"answerDecimal"`
+	AnswerDecimal     float64                   `bson:"answerDecimal" json:"answerDecimal"`
 	AnswerInteger     int                       `bson:"answerInteger" json:"answerInteger"`
-	AnswerDate        string                    `bson:"answerDate" json:"answerDate"`
-	AnswerDateTime    string                    `bson:"answerDateTime" json:"answerDateTime"`
+	AnswerDate        time.Time                 `bson:"answerDate" json:"answerDate"`
+	AnswerDateTime    time.Time                 `bson:"answerDateTime" json:"answerDateTime"`
 	AnswerTime        string                    `bson:"answerTime" json:"answerTime"`
 	AnswerString      string                    `bson:"answerString" json:"answerString"`
 	AnswerCoding      Coding                    `bson:"answerCoding" json:"answerCoding"`
@@ -94,7 +94,7 @@ type QuestionnaireItemAnswerOption struct {
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	ValueInteger      int         `bson:"valueInteger" json:"valueInteger"`
-	ValueDate         string      `bson:"valueDate" json:"valueDate"`
+	ValueDate         time.Time   `bson:"valueDate" json:"valueDate"`
 	ValueTime         string      `bson:"valueTime" json:"valueTime"`
 	ValueString       string      `bson:"valueString" json:"valueString"`
 	ValueCoding       Coding      `bson:"valueCoding" json:"valueCoding"`
@@ -106,10 +106,10 @@ type QuestionnaireItemInitial struct {
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	ValueBoolean      bool        `bson:"valueBoolean" json:"valueBoolean"`
-	ValueDecimal      string      `bson:"valueDecimal" json:"valueDecimal"`
+	ValueDecimal      float64     `bson:"valueDecimal" json:"valueDecimal"`
 	ValueInteger      int         `bson:"valueInteger" json:"valueInteger"`
-	ValueDate         string      `bson:"valueDate" json:"valueDate"`
-	ValueDateTime     string      `bson:"valueDateTime" json:"valueDateTime"`
+	ValueDate         time.Time   `bson:"valueDate" json:"valueDate"`
+	ValueDateTime     time.Time   `bson:"valueDateTime" json:"valueDateTime"`
 	ValueTime         string      `bson:"valueTime" json:"valueTime"`
 	ValueString       string      `bson:"valueString" json:"valueString"`
 	ValueUri          string      `bson:"valueUri" json:"valueUri"`

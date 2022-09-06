@@ -35,10 +35,10 @@ type Goal struct {
 	Priority             *CodeableConcept    `bson:"priority,omitempty" json:"priority,omitempty"`
 	Description          CodeableConcept     `bson:"description" json:"description"`
 	Subject              Reference           `bson:"subject" json:"subject"`
-	StartDate            *string             `bson:"startDate,omitempty" json:"startDate,omitempty"`
+	StartDate            *time.Time          `bson:"startDate,omitempty" json:"startDate,omitempty"`
 	StartCodeableConcept *CodeableConcept    `bson:"startCodeableConcept,omitempty" json:"startCodeableConcept,omitempty"`
 	Target               []GoalTarget        `bson:"target,omitempty" json:"target,omitempty"`
-	StatusDate           *string             `bson:"statusDate,omitempty" json:"statusDate,omitempty"`
+	StatusDate           *time.Time          `bson:"statusDate,omitempty" json:"statusDate,omitempty"`
 	StatusReason         *string             `bson:"statusReason,omitempty" json:"statusReason,omitempty"`
 	ExpressedBy          *Reference          `bson:"expressedBy,omitempty" json:"expressedBy,omitempty"`
 	Addresses            []Reference         `bson:"addresses,omitempty" json:"addresses,omitempty"`
@@ -58,7 +58,7 @@ type GoalTarget struct {
 	DetailBoolean         *bool            `bson:"detailBoolean,omitempty" json:"detailBoolean,omitempty"`
 	DetailInteger         *int             `bson:"detailInteger,omitempty" json:"detailInteger,omitempty"`
 	DetailRatio           *Ratio           `bson:"detailRatio,omitempty" json:"detailRatio,omitempty"`
-	DueDate               *string          `bson:"dueDate,omitempty" json:"dueDate,omitempty"`
+	DueDate               *time.Time       `bson:"dueDate,omitempty" json:"dueDate,omitempty"`
 	DueDuration           *Duration        `bson:"dueDuration,omitempty" json:"dueDuration,omitempty"`
 }
 type OtherGoal Goal

@@ -38,9 +38,9 @@ type MedicationStatement struct {
 	MedicationReference       Reference         `bson:"medicationReference" json:"medicationReference"`
 	Subject                   Reference         `bson:"subject" json:"subject"`
 	Context                   *Reference        `bson:"context,omitempty" json:"context,omitempty"`
-	EffectiveDateTime         *string           `bson:"effectiveDateTime,omitempty" json:"effectiveDateTime,omitempty"`
+	EffectiveDateTime         *time.Time        `bson:"effectiveDateTime,omitempty" json:"effectiveDateTime,omitempty"`
 	EffectivePeriod           *Period           `bson:"effectivePeriod,omitempty" json:"effectivePeriod,omitempty"`
-	DateAsserted              *string           `bson:"dateAsserted,omitempty" json:"dateAsserted,omitempty"`
+	DateAsserted              *time.Time        `bson:"dateAsserted,omitempty" json:"dateAsserted,omitempty"`
 	InformationSource         *Reference        `bson:"informationSource,omitempty" json:"informationSource,omitempty"`
 	DerivedFrom               []Reference       `bson:"derivedFrom,omitempty" json:"derivedFrom,omitempty"`
 	ReasonCode                []CodeableConcept `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`

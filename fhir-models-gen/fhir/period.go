@@ -21,6 +21,6 @@ package fhir
 type Period struct {
 	Id        *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	Start     *string     `bson:"start,omitempty" json:"start,omitempty"`
-	End       *string     `bson:"end,omitempty" json:"end,omitempty"`
+	Start     *time.Time  `bson:"start,omitempty" json:"start,omitempty"`
+	End       *time.Time  `bson:"end,omitempty" json:"end,omitempty"`
 }

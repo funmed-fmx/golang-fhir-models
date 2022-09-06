@@ -37,7 +37,7 @@ type Media struct {
 	View              *CodeableConcept  `bson:"view,omitempty" json:"view,omitempty"`
 	Subject           *Reference        `bson:"subject,omitempty" json:"subject,omitempty"`
 	Encounter         *Reference        `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	CreatedDateTime   *string           `bson:"createdDateTime,omitempty" json:"createdDateTime,omitempty"`
+	CreatedDateTime   *time.Time        `bson:"createdDateTime,omitempty" json:"createdDateTime,omitempty"`
 	CreatedPeriod     *Period           `bson:"createdPeriod,omitempty" json:"createdPeriod,omitempty"`
 	Issued            *string           `bson:"issued,omitempty" json:"issued,omitempty"`
 	Operator          *Reference        `bson:"operator,omitempty" json:"operator,omitempty"`
@@ -48,7 +48,7 @@ type Media struct {
 	Height            *int              `bson:"height,omitempty" json:"height,omitempty"`
 	Width             *int              `bson:"width,omitempty" json:"width,omitempty"`
 	Frames            *int              `bson:"frames,omitempty" json:"frames,omitempty"`
-	Duration          *string           `bson:"duration,omitempty" json:"duration,omitempty"`
+	Duration          *float64          `bson:"duration,omitempty" json:"duration,omitempty"`
 	Content           Attachment        `bson:"content" json:"content"`
 	Note              []Annotation      `bson:"note,omitempty" json:"note,omitempty"`
 }

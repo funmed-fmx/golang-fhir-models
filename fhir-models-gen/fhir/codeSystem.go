@@ -35,7 +35,7 @@ type CodeSystem struct {
 	Title             *string                     `bson:"title,omitempty" json:"title,omitempty"`
 	Status            PublicationStatus           `bson:"status" json:"status"`
 	Experimental      *bool                       `bson:"experimental,omitempty" json:"experimental,omitempty"`
-	Date              *string                     `bson:"date,omitempty" json:"date,omitempty"`
+	Date              *time.Time                  `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher         *string                     `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact           []ContactDetail             `bson:"contact,omitempty" json:"contact,omitempty"`
 	Description       *string                     `bson:"description,omitempty" json:"description,omitempty"`
@@ -102,8 +102,8 @@ type CodeSystemConceptProperty struct {
 	ValueString       string      `bson:"valueString" json:"valueString"`
 	ValueInteger      int         `bson:"valueInteger" json:"valueInteger"`
 	ValueBoolean      bool        `bson:"valueBoolean" json:"valueBoolean"`
-	ValueDateTime     string      `bson:"valueDateTime" json:"valueDateTime"`
-	ValueDecimal      string      `bson:"valueDecimal" json:"valueDecimal"`
+	ValueDateTime     time.Time   `bson:"valueDateTime" json:"valueDateTime"`
+	ValueDecimal      float64     `bson:"valueDecimal" json:"valueDecimal"`
 }
 type OtherCodeSystem CodeSystem
 

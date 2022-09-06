@@ -30,7 +30,7 @@ type Provenance struct {
 	ModifierExtension []Extension        `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Target            []Reference        `bson:"target" json:"target"`
 	OccurredPeriod    *Period            `bson:"occurredPeriod,omitempty" json:"occurredPeriod,omitempty"`
-	OccurredDateTime  *string            `bson:"occurredDateTime,omitempty" json:"occurredDateTime,omitempty"`
+	OccurredDateTime  *time.Time         `bson:"occurredDateTime,omitempty" json:"occurredDateTime,omitempty"`
 	Recorded          string             `bson:"recorded" json:"recorded"`
 	Policy            []string           `bson:"policy,omitempty" json:"policy,omitempty"`
 	Location          *Reference         `bson:"location,omitempty" json:"location,omitempty"`

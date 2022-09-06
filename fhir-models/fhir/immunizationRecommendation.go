@@ -30,7 +30,7 @@ type ImmunizationRecommendation struct {
 	ModifierExtension []Extension                                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier                               `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	Patient           Reference                                  `bson:"patient" json:"patient"`
-	Date              string                                     `bson:"date" json:"date"`
+	Date              time.Time                                  `bson:"date" json:"date"`
 	Authority         *Reference                                 `bson:"authority,omitempty" json:"authority,omitempty"`
 	Recommendation    []ImmunizationRecommendationRecommendation `bson:"recommendation" json:"recommendation"`
 }
@@ -58,7 +58,7 @@ type ImmunizationRecommendationRecommendationDateCriterion struct {
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              CodeableConcept `bson:"code" json:"code"`
-	Value             string          `bson:"value" json:"value"`
+	Value             time.Time       `bson:"value" json:"value"`
 }
 type OtherImmunizationRecommendation ImmunizationRecommendation
 

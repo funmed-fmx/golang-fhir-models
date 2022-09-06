@@ -46,7 +46,7 @@ type AdministrableProductDefinitionProperty struct {
 	Type                 CodeableConcept  `bson:"type" json:"type"`
 	ValueCodeableConcept *CodeableConcept `bson:"valueCodeableConcept,omitempty" json:"valueCodeableConcept,omitempty"`
 	ValueQuantity        *Quantity        `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
-	ValueDate            *string          `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
+	ValueDate            *time.Time       `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
 	ValueBoolean         *bool            `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
 	ValueAttachment      *Attachment      `bson:"valueAttachment,omitempty" json:"valueAttachment,omitempty"`
 	Status               *CodeableConcept `bson:"status,omitempty" json:"status,omitempty"`

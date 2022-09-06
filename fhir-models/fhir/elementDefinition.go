@@ -43,9 +43,9 @@ type ElementDefinition struct {
 	DefaultValueBoolean             *bool                         `bson:"defaultValueBoolean,omitempty" json:"defaultValueBoolean,omitempty"`
 	DefaultValueCanonical           *string                       `bson:"defaultValueCanonical,omitempty" json:"defaultValueCanonical,omitempty"`
 	DefaultValueCode                *string                       `bson:"defaultValueCode,omitempty" json:"defaultValueCode,omitempty"`
-	DefaultValueDate                *string                       `bson:"defaultValueDate,omitempty" json:"defaultValueDate,omitempty"`
-	DefaultValueDateTime            *string                       `bson:"defaultValueDateTime,omitempty" json:"defaultValueDateTime,omitempty"`
-	DefaultValueDecimal             *string                       `bson:"defaultValueDecimal,omitempty" json:"defaultValueDecimal,omitempty"`
+	DefaultValueDate                *time.Time                    `bson:"defaultValueDate,omitempty" json:"defaultValueDate,omitempty"`
+	DefaultValueDateTime            *time.Time                    `bson:"defaultValueDateTime,omitempty" json:"defaultValueDateTime,omitempty"`
+	DefaultValueDecimal             *float64                      `bson:"defaultValueDecimal,omitempty" json:"defaultValueDecimal,omitempty"`
 	DefaultValueId                  *string                       `bson:"defaultValueId,omitempty" json:"defaultValueId,omitempty"`
 	DefaultValueInstant             *string                       `bson:"defaultValueInstant,omitempty" json:"defaultValueInstant,omitempty"`
 	DefaultValueInteger             *int                          `bson:"defaultValueInteger,omitempty" json:"defaultValueInteger,omitempty"`
@@ -96,9 +96,9 @@ type ElementDefinition struct {
 	FixedBoolean                    *bool                         `bson:"fixedBoolean,omitempty" json:"fixedBoolean,omitempty"`
 	FixedCanonical                  *string                       `bson:"fixedCanonical,omitempty" json:"fixedCanonical,omitempty"`
 	FixedCode                       *string                       `bson:"fixedCode,omitempty" json:"fixedCode,omitempty"`
-	FixedDate                       *string                       `bson:"fixedDate,omitempty" json:"fixedDate,omitempty"`
-	FixedDateTime                   *string                       `bson:"fixedDateTime,omitempty" json:"fixedDateTime,omitempty"`
-	FixedDecimal                    *string                       `bson:"fixedDecimal,omitempty" json:"fixedDecimal,omitempty"`
+	FixedDate                       *time.Time                    `bson:"fixedDate,omitempty" json:"fixedDate,omitempty"`
+	FixedDateTime                   *time.Time                    `bson:"fixedDateTime,omitempty" json:"fixedDateTime,omitempty"`
+	FixedDecimal                    *float64                      `bson:"fixedDecimal,omitempty" json:"fixedDecimal,omitempty"`
 	FixedId                         *string                       `bson:"fixedId,omitempty" json:"fixedId,omitempty"`
 	FixedInstant                    *string                       `bson:"fixedInstant,omitempty" json:"fixedInstant,omitempty"`
 	FixedInteger                    *int                          `bson:"fixedInteger,omitempty" json:"fixedInteger,omitempty"`
@@ -147,9 +147,9 @@ type ElementDefinition struct {
 	PatternBoolean                  *bool                         `bson:"patternBoolean,omitempty" json:"patternBoolean,omitempty"`
 	PatternCanonical                *string                       `bson:"patternCanonical,omitempty" json:"patternCanonical,omitempty"`
 	PatternCode                     *string                       `bson:"patternCode,omitempty" json:"patternCode,omitempty"`
-	PatternDate                     *string                       `bson:"patternDate,omitempty" json:"patternDate,omitempty"`
-	PatternDateTime                 *string                       `bson:"patternDateTime,omitempty" json:"patternDateTime,omitempty"`
-	PatternDecimal                  *string                       `bson:"patternDecimal,omitempty" json:"patternDecimal,omitempty"`
+	PatternDate                     *time.Time                    `bson:"patternDate,omitempty" json:"patternDate,omitempty"`
+	PatternDateTime                 *time.Time                    `bson:"patternDateTime,omitempty" json:"patternDateTime,omitempty"`
+	PatternDecimal                  *float64                      `bson:"patternDecimal,omitempty" json:"patternDecimal,omitempty"`
 	PatternId                       *string                       `bson:"patternId,omitempty" json:"patternId,omitempty"`
 	PatternInstant                  *string                       `bson:"patternInstant,omitempty" json:"patternInstant,omitempty"`
 	PatternInteger                  *int                          `bson:"patternInteger,omitempty" json:"patternInteger,omitempty"`
@@ -195,20 +195,20 @@ type ElementDefinition struct {
 	PatternUsageContext             *UsageContext                 `bson:"patternUsageContext,omitempty" json:"patternUsageContext,omitempty"`
 	PatternDosage                   *Dosage                       `bson:"patternDosage,omitempty" json:"patternDosage,omitempty"`
 	Example                         []ElementDefinitionExample    `bson:"example,omitempty" json:"example,omitempty"`
-	MinValueDate                    *string                       `bson:"minValueDate,omitempty" json:"minValueDate,omitempty"`
-	MinValueDateTime                *string                       `bson:"minValueDateTime,omitempty" json:"minValueDateTime,omitempty"`
+	MinValueDate                    *time.Time                    `bson:"minValueDate,omitempty" json:"minValueDate,omitempty"`
+	MinValueDateTime                *time.Time                    `bson:"minValueDateTime,omitempty" json:"minValueDateTime,omitempty"`
 	MinValueInstant                 *string                       `bson:"minValueInstant,omitempty" json:"minValueInstant,omitempty"`
 	MinValueTime                    *string                       `bson:"minValueTime,omitempty" json:"minValueTime,omitempty"`
-	MinValueDecimal                 *string                       `bson:"minValueDecimal,omitempty" json:"minValueDecimal,omitempty"`
+	MinValueDecimal                 *float64                      `bson:"minValueDecimal,omitempty" json:"minValueDecimal,omitempty"`
 	MinValueInteger                 *int                          `bson:"minValueInteger,omitempty" json:"minValueInteger,omitempty"`
 	MinValuePositiveInt             *int                          `bson:"minValuePositiveInt,omitempty" json:"minValuePositiveInt,omitempty"`
 	MinValueUnsignedInt             *int                          `bson:"minValueUnsignedInt,omitempty" json:"minValueUnsignedInt,omitempty"`
 	MinValueQuantity                *Quantity                     `bson:"minValueQuantity,omitempty" json:"minValueQuantity,omitempty"`
-	MaxValueDate                    *string                       `bson:"maxValueDate,omitempty" json:"maxValueDate,omitempty"`
-	MaxValueDateTime                *string                       `bson:"maxValueDateTime,omitempty" json:"maxValueDateTime,omitempty"`
+	MaxValueDate                    *time.Time                    `bson:"maxValueDate,omitempty" json:"maxValueDate,omitempty"`
+	MaxValueDateTime                *time.Time                    `bson:"maxValueDateTime,omitempty" json:"maxValueDateTime,omitempty"`
 	MaxValueInstant                 *string                       `bson:"maxValueInstant,omitempty" json:"maxValueInstant,omitempty"`
 	MaxValueTime                    *string                       `bson:"maxValueTime,omitempty" json:"maxValueTime,omitempty"`
-	MaxValueDecimal                 *string                       `bson:"maxValueDecimal,omitempty" json:"maxValueDecimal,omitempty"`
+	MaxValueDecimal                 *float64                      `bson:"maxValueDecimal,omitempty" json:"maxValueDecimal,omitempty"`
 	MaxValueInteger                 *int                          `bson:"maxValueInteger,omitempty" json:"maxValueInteger,omitempty"`
 	MaxValuePositiveInt             *int                          `bson:"maxValuePositiveInt,omitempty" json:"maxValuePositiveInt,omitempty"`
 	MaxValueUnsignedInt             *int                          `bson:"maxValueUnsignedInt,omitempty" json:"maxValueUnsignedInt,omitempty"`
@@ -261,9 +261,9 @@ type ElementDefinitionExample struct {
 	ValueBoolean             bool                `bson:"valueBoolean" json:"valueBoolean"`
 	ValueCanonical           string              `bson:"valueCanonical" json:"valueCanonical"`
 	ValueCode                string              `bson:"valueCode" json:"valueCode"`
-	ValueDate                string              `bson:"valueDate" json:"valueDate"`
-	ValueDateTime            string              `bson:"valueDateTime" json:"valueDateTime"`
-	ValueDecimal             string              `bson:"valueDecimal" json:"valueDecimal"`
+	ValueDate                time.Time           `bson:"valueDate" json:"valueDate"`
+	ValueDateTime            time.Time           `bson:"valueDateTime" json:"valueDateTime"`
+	ValueDecimal             float64             `bson:"valueDecimal" json:"valueDecimal"`
 	ValueId                  string              `bson:"valueId" json:"valueId"`
 	ValueInstant             string              `bson:"valueInstant" json:"valueInstant"`
 	ValueInteger             int                 `bson:"valueInteger" json:"valueInteger"`

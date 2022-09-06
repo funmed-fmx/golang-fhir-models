@@ -34,9 +34,9 @@ type AdverseEvent struct {
 	Event                 *CodeableConcept            `bson:"event,omitempty" json:"event,omitempty"`
 	Subject               Reference                   `bson:"subject" json:"subject"`
 	Encounter             *Reference                  `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	Date                  *string                     `bson:"date,omitempty" json:"date,omitempty"`
-	Detected              *string                     `bson:"detected,omitempty" json:"detected,omitempty"`
-	RecordedDate          *string                     `bson:"recordedDate,omitempty" json:"recordedDate,omitempty"`
+	Date                  *time.Time                  `bson:"date,omitempty" json:"date,omitempty"`
+	Detected              *time.Time                  `bson:"detected,omitempty" json:"detected,omitempty"`
+	RecordedDate          *time.Time                  `bson:"recordedDate,omitempty" json:"recordedDate,omitempty"`
 	ResultingCondition    []Reference                 `bson:"resultingCondition,omitempty" json:"resultingCondition,omitempty"`
 	Location              *Reference                  `bson:"location,omitempty" json:"location,omitempty"`
 	Seriousness           *CodeableConcept            `bson:"seriousness,omitempty" json:"seriousness,omitempty"`

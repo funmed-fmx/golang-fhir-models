@@ -37,15 +37,15 @@ type AllergyIntolerance struct {
 	Code               *CodeableConcept               `bson:"code,omitempty" json:"code,omitempty"`
 	Patient            Reference                      `bson:"patient" json:"patient"`
 	Encounter          *Reference                     `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	OnsetDateTime      *string                        `bson:"onsetDateTime,omitempty" json:"onsetDateTime,omitempty"`
+	OnsetDateTime      *time.Time                     `bson:"onsetDateTime,omitempty" json:"onsetDateTime,omitempty"`
 	OnsetAge           *Age                           `bson:"onsetAge,omitempty" json:"onsetAge,omitempty"`
 	OnsetPeriod        *Period                        `bson:"onsetPeriod,omitempty" json:"onsetPeriod,omitempty"`
 	OnsetRange         *Range                         `bson:"onsetRange,omitempty" json:"onsetRange,omitempty"`
 	OnsetString        *string                        `bson:"onsetString,omitempty" json:"onsetString,omitempty"`
-	RecordedDate       *string                        `bson:"recordedDate,omitempty" json:"recordedDate,omitempty"`
+	RecordedDate       *time.Time                     `bson:"recordedDate,omitempty" json:"recordedDate,omitempty"`
 	Recorder           *Reference                     `bson:"recorder,omitempty" json:"recorder,omitempty"`
 	Asserter           *Reference                     `bson:"asserter,omitempty" json:"asserter,omitempty"`
-	LastOccurrence     *string                        `bson:"lastOccurrence,omitempty" json:"lastOccurrence,omitempty"`
+	LastOccurrence     *time.Time                     `bson:"lastOccurrence,omitempty" json:"lastOccurrence,omitempty"`
 	Note               []Annotation                   `bson:"note,omitempty" json:"note,omitempty"`
 	Reaction           []AllergyIntoleranceReaction   `bson:"reaction,omitempty" json:"reaction,omitempty"`
 }
@@ -56,7 +56,7 @@ type AllergyIntoleranceReaction struct {
 	Substance         *CodeableConcept            `bson:"substance,omitempty" json:"substance,omitempty"`
 	Manifestation     []CodeableConcept           `bson:"manifestation" json:"manifestation"`
 	Description       *string                     `bson:"description,omitempty" json:"description,omitempty"`
-	Onset             *string                     `bson:"onset,omitempty" json:"onset,omitempty"`
+	Onset             *time.Time                  `bson:"onset,omitempty" json:"onset,omitempty"`
 	Severity          *AllergyIntoleranceSeverity `bson:"severity,omitempty" json:"severity,omitempty"`
 	ExposureRoute     *CodeableConcept            `bson:"exposureRoute,omitempty" json:"exposureRoute,omitempty"`
 	Note              []Annotation                `bson:"note,omitempty" json:"note,omitempty"`

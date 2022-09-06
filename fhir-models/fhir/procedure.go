@@ -39,7 +39,7 @@ type Procedure struct {
 	Code                  *CodeableConcept       `bson:"code,omitempty" json:"code,omitempty"`
 	Subject               Reference              `bson:"subject" json:"subject"`
 	Encounter             *Reference             `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	PerformedDateTime     *string                `bson:"performedDateTime,omitempty" json:"performedDateTime,omitempty"`
+	PerformedDateTime     *time.Time             `bson:"performedDateTime,omitempty" json:"performedDateTime,omitempty"`
 	PerformedPeriod       *Period                `bson:"performedPeriod,omitempty" json:"performedPeriod,omitempty"`
 	PerformedString       *string                `bson:"performedString,omitempty" json:"performedString,omitempty"`
 	PerformedAge          *Age                   `bson:"performedAge,omitempty" json:"performedAge,omitempty"`

@@ -35,7 +35,7 @@ type ValueSet struct {
 	Title             *string            `bson:"title,omitempty" json:"title,omitempty"`
 	Status            PublicationStatus  `bson:"status" json:"status"`
 	Experimental      *bool              `bson:"experimental,omitempty" json:"experimental,omitempty"`
-	Date              *string            `bson:"date,omitempty" json:"date,omitempty"`
+	Date              *time.Time         `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher         *string            `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact           []ContactDetail    `bson:"contact,omitempty" json:"contact,omitempty"`
 	Description       *string            `bson:"description,omitempty" json:"description,omitempty"`
@@ -51,7 +51,7 @@ type ValueSetCompose struct {
 	Id                *string                  `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	LockedDate        *string                  `bson:"lockedDate,omitempty" json:"lockedDate,omitempty"`
+	LockedDate        *time.Time               `bson:"lockedDate,omitempty" json:"lockedDate,omitempty"`
 	Inactive          *bool                    `bson:"inactive,omitempty" json:"inactive,omitempty"`
 	Include           []ValueSetComposeInclude `bson:"include" json:"include"`
 	Exclude           []ValueSetComposeInclude `bson:"exclude,omitempty" json:"exclude,omitempty"`
@@ -95,7 +95,7 @@ type ValueSetExpansion struct {
 	Extension         []Extension                  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        *string                      `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Timestamp         string                       `bson:"timestamp" json:"timestamp"`
+	Timestamp         time.Time                    `bson:"timestamp" json:"timestamp"`
 	Total             *int                         `bson:"total,omitempty" json:"total,omitempty"`
 	Offset            *int                         `bson:"offset,omitempty" json:"offset,omitempty"`
 	Parameter         []ValueSetExpansionParameter `bson:"parameter,omitempty" json:"parameter,omitempty"`
@@ -109,10 +109,10 @@ type ValueSetExpansionParameter struct {
 	ValueString       *string     `bson:"valueString,omitempty" json:"valueString,omitempty"`
 	ValueBoolean      *bool       `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
 	ValueInteger      *int        `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
-	ValueDecimal      *string     `bson:"valueDecimal,omitempty" json:"valueDecimal,omitempty"`
+	ValueDecimal      *float64    `bson:"valueDecimal,omitempty" json:"valueDecimal,omitempty"`
 	ValueUri          *string     `bson:"valueUri,omitempty" json:"valueUri,omitempty"`
 	ValueCode         *string     `bson:"valueCode,omitempty" json:"valueCode,omitempty"`
-	ValueDateTime     *string     `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
+	ValueDateTime     *time.Time  `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
 }
 type ValueSetExpansionContains struct {
 	Id                *string                                    `bson:"id,omitempty" json:"id,omitempty"`

@@ -36,10 +36,10 @@ type SupplyRequest struct {
 	ItemReference       Reference                `bson:"itemReference" json:"itemReference"`
 	Quantity            Quantity                 `bson:"quantity" json:"quantity"`
 	Parameter           []SupplyRequestParameter `bson:"parameter,omitempty" json:"parameter,omitempty"`
-	OccurrenceDateTime  *string                  `bson:"occurrenceDateTime,omitempty" json:"occurrenceDateTime,omitempty"`
+	OccurrenceDateTime  *time.Time               `bson:"occurrenceDateTime,omitempty" json:"occurrenceDateTime,omitempty"`
 	OccurrencePeriod    *Period                  `bson:"occurrencePeriod,omitempty" json:"occurrencePeriod,omitempty"`
 	OccurrenceTiming    *Timing                  `bson:"occurrenceTiming,omitempty" json:"occurrenceTiming,omitempty"`
-	AuthoredOn          *string                  `bson:"authoredOn,omitempty" json:"authoredOn,omitempty"`
+	AuthoredOn          *time.Time               `bson:"authoredOn,omitempty" json:"authoredOn,omitempty"`
 	Requester           *Reference               `bson:"requester,omitempty" json:"requester,omitempty"`
 	Supplier            []Reference              `bson:"supplier,omitempty" json:"supplier,omitempty"`
 	ReasonCode          []CodeableConcept        `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`

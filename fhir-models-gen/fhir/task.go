@@ -45,8 +45,8 @@ type Task struct {
 	For                   *Reference        `bson:"for,omitempty" json:"for,omitempty"`
 	Encounter             *Reference        `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	ExecutionPeriod       *Period           `bson:"executionPeriod,omitempty" json:"executionPeriod,omitempty"`
-	AuthoredOn            *string           `bson:"authoredOn,omitempty" json:"authoredOn,omitempty"`
-	LastModified          *string           `bson:"lastModified,omitempty" json:"lastModified,omitempty"`
+	AuthoredOn            *time.Time        `bson:"authoredOn,omitempty" json:"authoredOn,omitempty"`
+	LastModified          *time.Time        `bson:"lastModified,omitempty" json:"lastModified,omitempty"`
 	Requester             *Reference        `bson:"requester,omitempty" json:"requester,omitempty"`
 	PerformerType         []CodeableConcept `bson:"performerType,omitempty" json:"performerType,omitempty"`
 	Owner                 *Reference        `bson:"owner,omitempty" json:"owner,omitempty"`
@@ -77,9 +77,9 @@ type TaskInput struct {
 	ValueBoolean             bool                `bson:"valueBoolean" json:"valueBoolean"`
 	ValueCanonical           string              `bson:"valueCanonical" json:"valueCanonical"`
 	ValueCode                string              `bson:"valueCode" json:"valueCode"`
-	ValueDate                string              `bson:"valueDate" json:"valueDate"`
-	ValueDateTime            string              `bson:"valueDateTime" json:"valueDateTime"`
-	ValueDecimal             string              `bson:"valueDecimal" json:"valueDecimal"`
+	ValueDate                time.Time           `bson:"valueDate" json:"valueDate"`
+	ValueDateTime            time.Time           `bson:"valueDateTime" json:"valueDateTime"`
+	ValueDecimal             float64             `bson:"valueDecimal" json:"valueDecimal"`
 	ValueId                  string              `bson:"valueId" json:"valueId"`
 	ValueInstant             string              `bson:"valueInstant" json:"valueInstant"`
 	ValueInteger             int                 `bson:"valueInteger" json:"valueInteger"`
@@ -133,9 +133,9 @@ type TaskOutput struct {
 	ValueBoolean             bool                `bson:"valueBoolean" json:"valueBoolean"`
 	ValueCanonical           string              `bson:"valueCanonical" json:"valueCanonical"`
 	ValueCode                string              `bson:"valueCode" json:"valueCode"`
-	ValueDate                string              `bson:"valueDate" json:"valueDate"`
-	ValueDateTime            string              `bson:"valueDateTime" json:"valueDateTime"`
-	ValueDecimal             string              `bson:"valueDecimal" json:"valueDecimal"`
+	ValueDate                time.Time           `bson:"valueDate" json:"valueDate"`
+	ValueDateTime            time.Time           `bson:"valueDateTime" json:"valueDateTime"`
+	ValueDecimal             float64             `bson:"valueDecimal" json:"valueDecimal"`
 	ValueId                  string              `bson:"valueId" json:"valueId"`
 	ValueInstant             string              `bson:"valueInstant" json:"valueInstant"`
 	ValueInteger             int                 `bson:"valueInteger" json:"valueInteger"`

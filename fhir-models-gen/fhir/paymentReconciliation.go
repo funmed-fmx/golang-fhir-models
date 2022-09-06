@@ -31,13 +31,13 @@ type PaymentReconciliation struct {
 	Identifier        []Identifier                       `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	Status            FinancialResourceStatusCodes       `bson:"status" json:"status"`
 	Period            *Period                            `bson:"period,omitempty" json:"period,omitempty"`
-	Created           string                             `bson:"created" json:"created"`
+	Created           time.Time                          `bson:"created" json:"created"`
 	PaymentIssuer     *Reference                         `bson:"paymentIssuer,omitempty" json:"paymentIssuer,omitempty"`
 	Request           *Reference                         `bson:"request,omitempty" json:"request,omitempty"`
 	Requestor         *Reference                         `bson:"requestor,omitempty" json:"requestor,omitempty"`
 	Outcome           *RemittanceOutcome                 `bson:"outcome,omitempty" json:"outcome,omitempty"`
 	Disposition       *string                            `bson:"disposition,omitempty" json:"disposition,omitempty"`
-	PaymentDate       string                             `bson:"paymentDate" json:"paymentDate"`
+	PaymentDate       time.Time                          `bson:"paymentDate" json:"paymentDate"`
 	PaymentAmount     Money                              `bson:"paymentAmount" json:"paymentAmount"`
 	PaymentIdentifier *Identifier                        `bson:"paymentIdentifier,omitempty" json:"paymentIdentifier,omitempty"`
 	Detail            []PaymentReconciliationDetail      `bson:"detail,omitempty" json:"detail,omitempty"`
@@ -54,7 +54,7 @@ type PaymentReconciliationDetail struct {
 	Request           *Reference      `bson:"request,omitempty" json:"request,omitempty"`
 	Submitter         *Reference      `bson:"submitter,omitempty" json:"submitter,omitempty"`
 	Response          *Reference      `bson:"response,omitempty" json:"response,omitempty"`
-	Date              *string         `bson:"date,omitempty" json:"date,omitempty"`
+	Date              *time.Time      `bson:"date,omitempty" json:"date,omitempty"`
 	Responsible       *Reference      `bson:"responsible,omitempty" json:"responsible,omitempty"`
 	Payee             *Reference      `bson:"payee,omitempty" json:"payee,omitempty"`
 	Amount            *Money          `bson:"amount,omitempty" json:"amount,omitempty"`

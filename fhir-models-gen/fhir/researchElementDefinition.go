@@ -39,7 +39,7 @@ type ResearchElementDefinition struct {
 	Experimental           *bool                                     `bson:"experimental,omitempty" json:"experimental,omitempty"`
 	SubjectCodeableConcept *CodeableConcept                          `bson:"subjectCodeableConcept,omitempty" json:"subjectCodeableConcept,omitempty"`
 	SubjectReference       *Reference                                `bson:"subjectReference,omitempty" json:"subjectReference,omitempty"`
-	Date                   *string                                   `bson:"date,omitempty" json:"date,omitempty"`
+	Date                   *time.Time                                `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher              *string                                   `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact                []ContactDetail                           `bson:"contact,omitempty" json:"contact,omitempty"`
 	Description            *string                                   `bson:"description,omitempty" json:"description,omitempty"`
@@ -49,8 +49,8 @@ type ResearchElementDefinition struct {
 	Purpose                *string                                   `bson:"purpose,omitempty" json:"purpose,omitempty"`
 	Usage                  *string                                   `bson:"usage,omitempty" json:"usage,omitempty"`
 	Copyright              *string                                   `bson:"copyright,omitempty" json:"copyright,omitempty"`
-	ApprovalDate           *string                                   `bson:"approvalDate,omitempty" json:"approvalDate,omitempty"`
-	LastReviewDate         *string                                   `bson:"lastReviewDate,omitempty" json:"lastReviewDate,omitempty"`
+	ApprovalDate           *time.Time                                `bson:"approvalDate,omitempty" json:"approvalDate,omitempty"`
+	LastReviewDate         *time.Time                                `bson:"lastReviewDate,omitempty" json:"lastReviewDate,omitempty"`
 	EffectivePeriod        *Period                                   `bson:"effectivePeriod,omitempty" json:"effectivePeriod,omitempty"`
 	Topic                  []CodeableConcept                         `bson:"topic,omitempty" json:"topic,omitempty"`
 	Author                 []ContactDetail                           `bson:"author,omitempty" json:"author,omitempty"`
@@ -75,14 +75,14 @@ type ResearchElementDefinitionCharacteristic struct {
 	Exclude                           *bool            `bson:"exclude,omitempty" json:"exclude,omitempty"`
 	UnitOfMeasure                     *CodeableConcept `bson:"unitOfMeasure,omitempty" json:"unitOfMeasure,omitempty"`
 	StudyEffectiveDescription         *string          `bson:"studyEffectiveDescription,omitempty" json:"studyEffectiveDescription,omitempty"`
-	StudyEffectiveDateTime            *string          `bson:"studyEffectiveDateTime,omitempty" json:"studyEffectiveDateTime,omitempty"`
+	StudyEffectiveDateTime            *time.Time       `bson:"studyEffectiveDateTime,omitempty" json:"studyEffectiveDateTime,omitempty"`
 	StudyEffectivePeriod              *Period          `bson:"studyEffectivePeriod,omitempty" json:"studyEffectivePeriod,omitempty"`
 	StudyEffectiveDuration            *Duration        `bson:"studyEffectiveDuration,omitempty" json:"studyEffectiveDuration,omitempty"`
 	StudyEffectiveTiming              *Timing          `bson:"studyEffectiveTiming,omitempty" json:"studyEffectiveTiming,omitempty"`
 	StudyEffectiveTimeFromStart       *Duration        `bson:"studyEffectiveTimeFromStart,omitempty" json:"studyEffectiveTimeFromStart,omitempty"`
 	StudyEffectiveGroupMeasure        *GroupMeasure    `bson:"studyEffectiveGroupMeasure,omitempty" json:"studyEffectiveGroupMeasure,omitempty"`
 	ParticipantEffectiveDescription   *string          `bson:"participantEffectiveDescription,omitempty" json:"participantEffectiveDescription,omitempty"`
-	ParticipantEffectiveDateTime      *string          `bson:"participantEffectiveDateTime,omitempty" json:"participantEffectiveDateTime,omitempty"`
+	ParticipantEffectiveDateTime      *time.Time       `bson:"participantEffectiveDateTime,omitempty" json:"participantEffectiveDateTime,omitempty"`
 	ParticipantEffectivePeriod        *Period          `bson:"participantEffectivePeriod,omitempty" json:"participantEffectivePeriod,omitempty"`
 	ParticipantEffectiveDuration      *Duration        `bson:"participantEffectiveDuration,omitempty" json:"participantEffectiveDuration,omitempty"`
 	ParticipantEffectiveTiming        *Timing          `bson:"participantEffectiveTiming,omitempty" json:"participantEffectiveTiming,omitempty"`

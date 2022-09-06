@@ -33,7 +33,7 @@ type MedicinalProductDefinition struct {
 	Domain                         *CodeableConcept                           `bson:"domain,omitempty" json:"domain,omitempty"`
 	Version                        *string                                    `bson:"version,omitempty" json:"version,omitempty"`
 	Status                         *CodeableConcept                           `bson:"status,omitempty" json:"status,omitempty"`
-	StatusDate                     *string                                    `bson:"statusDate,omitempty" json:"statusDate,omitempty"`
+	StatusDate                     *time.Time                                 `bson:"statusDate,omitempty" json:"statusDate,omitempty"`
 	Description                    *string                                    `bson:"description,omitempty" json:"description,omitempty"`
 	CombinedPharmaceuticalDoseForm *CodeableConcept                           `bson:"combinedPharmaceuticalDoseForm,omitempty" json:"combinedPharmaceuticalDoseForm,omitempty"`
 	Route                          []CodeableConcept                          `bson:"route,omitempty" json:"route,omitempty"`
@@ -111,7 +111,7 @@ type MedicinalProductDefinitionCharacteristic struct {
 	Type                 CodeableConcept  `bson:"type" json:"type"`
 	ValueCodeableConcept *CodeableConcept `bson:"valueCodeableConcept,omitempty" json:"valueCodeableConcept,omitempty"`
 	ValueQuantity        *Quantity        `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
-	ValueDate            *string          `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
+	ValueDate            *time.Time       `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
 	ValueBoolean         *bool            `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
 	ValueAttachment      *Attachment      `bson:"valueAttachment,omitempty" json:"valueAttachment,omitempty"`
 }

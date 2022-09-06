@@ -35,7 +35,7 @@ type QuestionnaireResponse struct {
 	Status            QuestionnaireResponseStatus `bson:"status" json:"status"`
 	Subject           *Reference                  `bson:"subject,omitempty" json:"subject,omitempty"`
 	Encounter         *Reference                  `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	Authored          *string                     `bson:"authored,omitempty" json:"authored,omitempty"`
+	Authored          *time.Time                  `bson:"authored,omitempty" json:"authored,omitempty"`
 	Author            *Reference                  `bson:"author,omitempty" json:"author,omitempty"`
 	Source            *Reference                  `bson:"source,omitempty" json:"source,omitempty"`
 	Item              []QuestionnaireResponseItem `bson:"item,omitempty" json:"item,omitempty"`
@@ -55,10 +55,10 @@ type QuestionnaireResponseItemAnswer struct {
 	Extension         []Extension                 `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                 `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	ValueBoolean      *bool                       `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
-	ValueDecimal      *string                     `bson:"valueDecimal,omitempty" json:"valueDecimal,omitempty"`
+	ValueDecimal      *float64                    `bson:"valueDecimal,omitempty" json:"valueDecimal,omitempty"`
 	ValueInteger      *int                        `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
-	ValueDate         *string                     `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
-	ValueDateTime     *string                     `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
+	ValueDate         *time.Time                  `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
+	ValueDateTime     *time.Time                  `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
 	ValueTime         *string                     `bson:"valueTime,omitempty" json:"valueTime,omitempty"`
 	ValueString       *string                     `bson:"valueString,omitempty" json:"valueString,omitempty"`
 	ValueUri          *string                     `bson:"valueUri,omitempty" json:"valueUri,omitempty"`

@@ -36,7 +36,7 @@ type RiskAssessment struct {
 	Code               *CodeableConcept           `bson:"code,omitempty" json:"code,omitempty"`
 	Subject            Reference                  `bson:"subject" json:"subject"`
 	Encounter          *Reference                 `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	OccurrenceDateTime *string                    `bson:"occurrenceDateTime,omitempty" json:"occurrenceDateTime,omitempty"`
+	OccurrenceDateTime *time.Time                 `bson:"occurrenceDateTime,omitempty" json:"occurrenceDateTime,omitempty"`
 	OccurrencePeriod   *Period                    `bson:"occurrencePeriod,omitempty" json:"occurrencePeriod,omitempty"`
 	Condition          *Reference                 `bson:"condition,omitempty" json:"condition,omitempty"`
 	Performer          *Reference                 `bson:"performer,omitempty" json:"performer,omitempty"`
@@ -52,10 +52,10 @@ type RiskAssessmentPrediction struct {
 	Extension          []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension  []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Outcome            *CodeableConcept `bson:"outcome,omitempty" json:"outcome,omitempty"`
-	ProbabilityDecimal *string          `bson:"probabilityDecimal,omitempty" json:"probabilityDecimal,omitempty"`
+	ProbabilityDecimal *float64         `bson:"probabilityDecimal,omitempty" json:"probabilityDecimal,omitempty"`
 	ProbabilityRange   *Range           `bson:"probabilityRange,omitempty" json:"probabilityRange,omitempty"`
 	QualitativeRisk    *CodeableConcept `bson:"qualitativeRisk,omitempty" json:"qualitativeRisk,omitempty"`
-	RelativeRisk       *string          `bson:"relativeRisk,omitempty" json:"relativeRisk,omitempty"`
+	RelativeRisk       *float64         `bson:"relativeRisk,omitempty" json:"relativeRisk,omitempty"`
 	WhenPeriod         *Period          `bson:"whenPeriod,omitempty" json:"whenPeriod,omitempty"`
 	WhenRange          *Range           `bson:"whenRange,omitempty" json:"whenRange,omitempty"`
 	Rationale          *string          `bson:"rationale,omitempty" json:"rationale,omitempty"`

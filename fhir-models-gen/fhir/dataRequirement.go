@@ -44,7 +44,7 @@ type DataRequirementDateFilter struct {
 	Extension     []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	Path          *string     `bson:"path,omitempty" json:"path,omitempty"`
 	SearchParam   *string     `bson:"searchParam,omitempty" json:"searchParam,omitempty"`
-	ValueDateTime *string     `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
+	ValueDateTime *time.Time  `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
 	ValuePeriod   *Period     `bson:"valuePeriod,omitempty" json:"valuePeriod,omitempty"`
 	ValueDuration *Duration   `bson:"valueDuration,omitempty" json:"valueDuration,omitempty"`
 }
