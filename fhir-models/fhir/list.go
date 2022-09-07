@@ -32,8 +32,8 @@ type List struct {
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier     `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status            ListStatus       `bson:"status" json:"status"`
-	Mode              ListMode         `bson:"mode" json:"mode"`
+	Status            ListStatus       `bson:"status" json:"status,omitempty"`
+	Mode              ListMode         `bson:"mode" json:"mode,omitempty"`
 	Title             *string          `bson:"title,omitempty" json:"title,omitempty"`
 	Code              *CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
 	Subject           *Reference       `bson:"subject,omitempty" json:"subject,omitempty"`
@@ -52,7 +52,7 @@ type ListEntry struct {
 	Flag              *CodeableConcept `bson:"flag,omitempty" json:"flag,omitempty"`
 	Deleted           *bool            `bson:"deleted,omitempty" json:"deleted,omitempty"`
 	Date              *time.Time       `bson:"date,omitempty" json:"date,omitempty"`
-	Item              Reference        `bson:"item" json:"item"`
+	Item              Reference        `bson:"item" json:"item,omitempty"`
 }
 type OtherList List
 

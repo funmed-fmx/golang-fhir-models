@@ -38,7 +38,7 @@ type Condition struct {
 	Severity           *CodeableConcept    `bson:"severity,omitempty" json:"severity,omitempty"`
 	Code               *CodeableConcept    `bson:"code,omitempty" json:"code,omitempty"`
 	BodySite           []CodeableConcept   `bson:"bodySite,omitempty" json:"bodySite,omitempty"`
-	Subject            Reference           `bson:"subject" json:"subject"`
+	Subject            Reference           `bson:"subject" json:"subject,omitempty"`
 	Encounter          *Reference          `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	OnsetDateTime      *time.Time          `bson:"onsetDateTime,omitempty" json:"onsetDateTime,omitempty"`
 	OnsetAge           *Age                `bson:"onsetAge,omitempty" json:"onsetAge,omitempty"`

@@ -32,9 +32,9 @@ type Consent struct {
 	Extension         []Extension           `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier          `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status            ConsentState          `bson:"status" json:"status"`
-	Scope             CodeableConcept       `bson:"scope" json:"scope"`
-	Category          []CodeableConcept     `bson:"category" json:"category"`
+	Status            ConsentState          `bson:"status" json:"status,omitempty"`
+	Scope             CodeableConcept       `bson:"scope" json:"scope,omitempty"`
+	Category          []CodeableConcept     `bson:"category" json:"category,omitempty"`
 	Patient           *Reference            `bson:"patient,omitempty" json:"patient,omitempty"`
 	DateTime          *time.Time            `bson:"dateTime,omitempty" json:"dateTime,omitempty"`
 	Performer         []Reference           `bson:"performer,omitempty" json:"performer,omitempty"`
@@ -57,7 +57,7 @@ type ConsentVerification struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Verified          bool        `bson:"verified" json:"verified"`
+	Verified          bool        `bson:"verified" json:"verified,omitempty"`
 	VerifiedWith      *Reference  `bson:"verifiedWith,omitempty" json:"verifiedWith,omitempty"`
 	VerificationDate  *time.Time  `bson:"verificationDate,omitempty" json:"verificationDate,omitempty"`
 }
@@ -81,15 +81,15 @@ type ConsentProvisionActor struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Role              CodeableConcept `bson:"role" json:"role"`
-	Reference         Reference       `bson:"reference" json:"reference"`
+	Role              CodeableConcept `bson:"role" json:"role,omitempty"`
+	Reference         Reference       `bson:"reference" json:"reference,omitempty"`
 }
 type ConsentProvisionData struct {
 	Id                *string            `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension        `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension        `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Meaning           ConsentDataMeaning `bson:"meaning" json:"meaning"`
-	Reference         Reference          `bson:"reference" json:"reference"`
+	Meaning           ConsentDataMeaning `bson:"meaning" json:"meaning,omitempty"`
+	Reference         Reference          `bson:"reference" json:"reference,omitempty"`
 }
 type OtherConsent Consent
 

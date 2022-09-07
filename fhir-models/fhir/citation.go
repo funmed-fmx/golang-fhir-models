@@ -36,7 +36,7 @@ type Citation struct {
 	Version           *string                  `bson:"version,omitempty" json:"version,omitempty"`
 	Name              *string                  `bson:"name,omitempty" json:"name,omitempty"`
 	Title             *string                  `bson:"title,omitempty" json:"title,omitempty"`
-	Status            PublicationStatus        `bson:"status" json:"status"`
+	Status            PublicationStatus        `bson:"status" json:"status,omitempty"`
 	Experimental      *bool                    `bson:"experimental,omitempty" json:"experimental,omitempty"`
 	Date              *time.Time               `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher         *string                  `bson:"publisher,omitempty" json:"publisher,omitempty"`
@@ -66,7 +66,7 @@ type CitationSummary struct {
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Style             *CodeableConcept `bson:"style,omitempty" json:"style,omitempty"`
-	Text              string           `bson:"text" json:"text"`
+	Text              string           `bson:"text" json:"text,omitempty"`
 }
 type CitationClassification struct {
 	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
@@ -79,20 +79,20 @@ type CitationStatusDate struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Activity          CodeableConcept `bson:"activity" json:"activity"`
+	Activity          CodeableConcept `bson:"activity" json:"activity,omitempty"`
 	Actual            *bool           `bson:"actual,omitempty" json:"actual,omitempty"`
-	Period            Period          `bson:"period" json:"period"`
+	Period            Period          `bson:"period" json:"period,omitempty"`
 }
 type CitationRelatesTo struct {
 	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	RelationshipType  CodeableConcept   `bson:"relationshipType" json:"relationshipType"`
+	RelationshipType  CodeableConcept   `bson:"relationshipType" json:"relationshipType,omitempty"`
 	TargetClassifier  []CodeableConcept `bson:"targetClassifier,omitempty" json:"targetClassifier,omitempty"`
-	TargetUri         string            `bson:"targetUri" json:"targetUri"`
-	TargetIdentifier  Identifier        `bson:"targetIdentifier" json:"targetIdentifier"`
-	TargetReference   Reference         `bson:"targetReference" json:"targetReference"`
-	TargetAttachment  Attachment        `bson:"targetAttachment" json:"targetAttachment"`
+	TargetUri         string            `bson:"targetUri" json:"targetUri,omitempty"`
+	TargetIdentifier  Identifier        `bson:"targetIdentifier" json:"targetIdentifier,omitempty"`
+	TargetReference   Reference         `bson:"targetReference" json:"targetReference,omitempty"`
+	TargetAttachment  Attachment        `bson:"targetAttachment" json:"targetAttachment,omitempty"`
 }
 type CitationCitedArtifact struct {
 	Id                *string                                `bson:"id,omitempty" json:"id,omitempty"`
@@ -118,16 +118,16 @@ type CitationCitedArtifactVersion struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Value             string      `bson:"value" json:"value"`
+	Value             string      `bson:"value" json:"value,omitempty"`
 	BaseCitation      *Reference  `bson:"baseCitation,omitempty" json:"baseCitation,omitempty"`
 }
 type CitationCitedArtifactStatusDate struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Activity          CodeableConcept `bson:"activity" json:"activity"`
+	Activity          CodeableConcept `bson:"activity" json:"activity,omitempty"`
 	Actual            *bool           `bson:"actual,omitempty" json:"actual,omitempty"`
-	Period            Period          `bson:"period" json:"period"`
+	Period            Period          `bson:"period" json:"period,omitempty"`
 }
 type CitationCitedArtifactTitle struct {
 	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
@@ -135,7 +135,7 @@ type CitationCitedArtifactTitle struct {
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              []CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
 	Language          *CodeableConcept  `bson:"language,omitempty" json:"language,omitempty"`
-	Text              string            `bson:"text" json:"text"`
+	Text              string            `bson:"text" json:"text,omitempty"`
 }
 type CitationCitedArtifactAbstract struct {
 	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
@@ -143,7 +143,7 @@ type CitationCitedArtifactAbstract struct {
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              *CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
 	Language          *CodeableConcept `bson:"language,omitempty" json:"language,omitempty"`
-	Text              string           `bson:"text" json:"text"`
+	Text              string           `bson:"text" json:"text,omitempty"`
 	Copyright         *string          `bson:"copyright,omitempty" json:"copyright,omitempty"`
 }
 type CitationCitedArtifactPart struct {
@@ -158,12 +158,12 @@ type CitationCitedArtifactRelatesTo struct {
 	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	RelationshipType  CodeableConcept   `bson:"relationshipType" json:"relationshipType"`
+	RelationshipType  CodeableConcept   `bson:"relationshipType" json:"relationshipType,omitempty"`
 	TargetClassifier  []CodeableConcept `bson:"targetClassifier,omitempty" json:"targetClassifier,omitempty"`
-	TargetUri         string            `bson:"targetUri" json:"targetUri"`
-	TargetIdentifier  Identifier        `bson:"targetIdentifier" json:"targetIdentifier"`
-	TargetReference   Reference         `bson:"targetReference" json:"targetReference"`
-	TargetAttachment  Attachment        `bson:"targetAttachment" json:"targetAttachment"`
+	TargetUri         string            `bson:"targetUri" json:"targetUri,omitempty"`
+	TargetIdentifier  Identifier        `bson:"targetIdentifier" json:"targetIdentifier,omitempty"`
+	TargetReference   Reference         `bson:"targetReference" json:"targetReference,omitempty"`
+	TargetAttachment  Attachment        `bson:"targetAttachment" json:"targetAttachment,omitempty"`
 }
 type CitationCitedArtifactPublicationForm struct {
 	Id                *string                                              `bson:"id,omitempty" json:"id,omitempty"`
@@ -273,7 +273,7 @@ type CitationCitedArtifactContributorshipEntryContributionInstance struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              CodeableConcept `bson:"type" json:"type"`
+	Type              CodeableConcept `bson:"type" json:"type,omitempty"`
 	Time              *time.Time      `bson:"time,omitempty" json:"time,omitempty"`
 }
 type CitationCitedArtifactContributorshipSummary struct {
@@ -283,7 +283,7 @@ type CitationCitedArtifactContributorshipSummary struct {
 	Type              *CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
 	Style             *CodeableConcept `bson:"style,omitempty" json:"style,omitempty"`
 	Source            *CodeableConcept `bson:"source,omitempty" json:"source,omitempty"`
-	Value             string           `bson:"value" json:"value"`
+	Value             string           `bson:"value" json:"value,omitempty"`
 }
 type OtherCitation Citation
 

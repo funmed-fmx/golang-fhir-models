@@ -31,10 +31,10 @@ type NamingSystem struct {
 	Text              *Narrative             `bson:"text,omitempty" json:"text,omitempty"`
 	Extension         []Extension            `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Name              string                 `bson:"name" json:"name"`
-	Status            PublicationStatus      `bson:"status" json:"status"`
-	Kind              NamingSystemType       `bson:"kind" json:"kind"`
-	Date              time.Time              `bson:"date" json:"date"`
+	Name              string                 `bson:"name" json:"name,omitempty"`
+	Status            PublicationStatus      `bson:"status" json:"status,omitempty"`
+	Kind              NamingSystemType       `bson:"kind" json:"kind,omitempty"`
+	Date              time.Time              `bson:"date" json:"date,omitempty"`
 	Publisher         *string                `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact           []ContactDetail        `bson:"contact,omitempty" json:"contact,omitempty"`
 	Responsible       *string                `bson:"responsible,omitempty" json:"responsible,omitempty"`
@@ -43,14 +43,14 @@ type NamingSystem struct {
 	UseContext        []UsageContext         `bson:"useContext,omitempty" json:"useContext,omitempty"`
 	Jurisdiction      []CodeableConcept      `bson:"jurisdiction,omitempty" json:"jurisdiction,omitempty"`
 	Usage             *string                `bson:"usage,omitempty" json:"usage,omitempty"`
-	UniqueId          []NamingSystemUniqueId `bson:"uniqueId" json:"uniqueId"`
+	UniqueId          []NamingSystemUniqueId `bson:"uniqueId" json:"uniqueId,omitempty"`
 }
 type NamingSystemUniqueId struct {
 	Id                *string                    `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              NamingSystemIdentifierType `bson:"type" json:"type"`
-	Value             string                     `bson:"value" json:"value"`
+	Type              NamingSystemIdentifierType `bson:"type" json:"type,omitempty"`
+	Value             string                     `bson:"value" json:"value,omitempty"`
 	Preferred         *bool                      `bson:"preferred,omitempty" json:"preferred,omitempty"`
 	Comment           *string                    `bson:"comment,omitempty" json:"comment,omitempty"`
 	Period            *Period                    `bson:"period,omitempty" json:"period,omitempty"`

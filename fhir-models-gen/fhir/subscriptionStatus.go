@@ -29,10 +29,10 @@ type SubscriptionStatus struct {
 	Extension                    []Extension                           `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension            []Extension                           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Status                       *SubscriptionStatusCodes              `bson:"status,omitempty" json:"status,omitempty"`
-	Type                         SubscriptionNotificationType          `bson:"type" json:"type"`
+	Type                         SubscriptionNotificationType          `bson:"type,omitempty" json:"type,omitempty"`
 	EventsSinceSubscriptionStart *string                               `bson:"eventsSinceSubscriptionStart,omitempty" json:"eventsSinceSubscriptionStart,omitempty"`
 	NotificationEvent            []SubscriptionStatusNotificationEvent `bson:"notificationEvent,omitempty" json:"notificationEvent,omitempty"`
-	Subscription                 Reference                             `bson:"subscription" json:"subscription"`
+	Subscription                 Reference                             `bson:"subscription,omitempty" json:"subscription,omitempty"`
 	Topic                        *string                               `bson:"topic,omitempty" json:"topic,omitempty"`
 	Error                        []CodeableConcept                     `bson:"error,omitempty" json:"error,omitempty"`
 }
@@ -40,7 +40,7 @@ type SubscriptionStatusNotificationEvent struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	EventNumber       string      `bson:"eventNumber" json:"eventNumber"`
+	EventNumber       string      `bson:"eventNumber,omitempty" json:"eventNumber,omitempty"`
 	Timestamp         *string     `bson:"timestamp,omitempty" json:"timestamp,omitempty"`
 	Focus             *Reference  `bson:"focus,omitempty" json:"focus,omitempty"`
 	AdditionalContext []Reference `bson:"additionalContext,omitempty" json:"additionalContext,omitempty"`

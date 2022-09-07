@@ -38,7 +38,7 @@ type EvidenceVariable struct {
 	Title                     *string                          `bson:"title,omitempty" json:"title,omitempty"`
 	ShortTitle                *string                          `bson:"shortTitle,omitempty" json:"shortTitle,omitempty"`
 	Subtitle                  *string                          `bson:"subtitle,omitempty" json:"subtitle,omitempty"`
-	Status                    PublicationStatus                `bson:"status" json:"status"`
+	Status                    PublicationStatus                `bson:"status" json:"status,omitempty"`
 	Date                      *time.Time                       `bson:"date,omitempty" json:"date,omitempty"`
 	Description               *string                          `bson:"description,omitempty" json:"description,omitempty"`
 	Note                      []Annotation                     `bson:"note,omitempty" json:"note,omitempty"`
@@ -61,10 +61,10 @@ type EvidenceVariableCharacteristic struct {
 	Extension                 []Extension                                  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension         []Extension                                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Description               *string                                      `bson:"description,omitempty" json:"description,omitempty"`
-	DefinitionReference       Reference                                    `bson:"definitionReference" json:"definitionReference"`
-	DefinitionCanonical       string                                       `bson:"definitionCanonical" json:"definitionCanonical"`
-	DefinitionCodeableConcept CodeableConcept                              `bson:"definitionCodeableConcept" json:"definitionCodeableConcept"`
-	DefinitionExpression      Expression                                   `bson:"definitionExpression" json:"definitionExpression"`
+	DefinitionReference       Reference                                    `bson:"definitionReference" json:"definitionReference,omitempty"`
+	DefinitionCanonical       string                                       `bson:"definitionCanonical" json:"definitionCanonical,omitempty"`
+	DefinitionCodeableConcept CodeableConcept                              `bson:"definitionCodeableConcept" json:"definitionCodeableConcept,omitempty"`
+	DefinitionExpression      Expression                                   `bson:"definitionExpression" json:"definitionExpression,omitempty"`
 	Method                    *CodeableConcept                             `bson:"method,omitempty" json:"method,omitempty"`
 	Device                    *Reference                                   `bson:"device,omitempty" json:"device,omitempty"`
 	Exclude                   *bool                                        `bson:"exclude,omitempty" json:"exclude,omitempty"`

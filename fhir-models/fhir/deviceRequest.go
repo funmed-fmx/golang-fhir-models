@@ -38,12 +38,12 @@ type DeviceRequest struct {
 	PriorRequest          []Reference              `bson:"priorRequest,omitempty" json:"priorRequest,omitempty"`
 	GroupIdentifier       *Identifier              `bson:"groupIdentifier,omitempty" json:"groupIdentifier,omitempty"`
 	Status                *RequestStatus           `bson:"status,omitempty" json:"status,omitempty"`
-	Intent                RequestIntent            `bson:"intent" json:"intent"`
+	Intent                RequestIntent            `bson:"intent" json:"intent,omitempty"`
 	Priority              *RequestPriority         `bson:"priority,omitempty" json:"priority,omitempty"`
-	CodeReference         Reference                `bson:"codeReference" json:"codeReference"`
-	CodeCodeableConcept   CodeableConcept          `bson:"codeCodeableConcept" json:"codeCodeableConcept"`
+	CodeReference         Reference                `bson:"codeReference" json:"codeReference,omitempty"`
+	CodeCodeableConcept   CodeableConcept          `bson:"codeCodeableConcept" json:"codeCodeableConcept,omitempty"`
 	Parameter             []DeviceRequestParameter `bson:"parameter,omitempty" json:"parameter,omitempty"`
-	Subject               Reference                `bson:"subject" json:"subject"`
+	Subject               Reference                `bson:"subject" json:"subject,omitempty"`
 	Encounter             *Reference               `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	OccurrenceDateTime    *time.Time               `bson:"occurrenceDateTime,omitempty" json:"occurrenceDateTime,omitempty"`
 	OccurrencePeriod      *Period                  `bson:"occurrencePeriod,omitempty" json:"occurrencePeriod,omitempty"`

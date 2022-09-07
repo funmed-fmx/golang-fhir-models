@@ -31,7 +31,7 @@ type NutritionProduct struct {
 	Text                  *Narrative                              `bson:"text,omitempty" json:"text,omitempty"`
 	Extension             []Extension                             `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension     []Extension                             `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Status                NutritionProductStatus                  `bson:"status" json:"status"`
+	Status                NutritionProductStatus                  `bson:"status,omitempty" json:"status,omitempty"`
 	Category              []CodeableConcept                       `bson:"category,omitempty" json:"category,omitempty"`
 	Code                  *CodeableConcept                        `bson:"code,omitempty" json:"code,omitempty"`
 	Manufacturer          []Reference                             `bson:"manufacturer,omitempty" json:"manufacturer,omitempty"`
@@ -53,20 +53,20 @@ type NutritionProductIngredient struct {
 	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Item              CodeableReference `bson:"item" json:"item"`
+	Item              CodeableReference `bson:"item,omitempty" json:"item,omitempty"`
 	Amount            []Ratio           `bson:"amount,omitempty" json:"amount,omitempty"`
 }
 type NutritionProductProductCharacteristic struct {
 	Id                   *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension            []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type                 CodeableConcept `bson:"type" json:"type"`
-	ValueCodeableConcept CodeableConcept `bson:"valueCodeableConcept" json:"valueCodeableConcept"`
-	ValueString          string          `bson:"valueString" json:"valueString"`
-	ValueQuantity        Quantity        `bson:"valueQuantity" json:"valueQuantity"`
-	ValueBase64Binary    string          `bson:"valueBase64Binary" json:"valueBase64Binary"`
-	ValueAttachment      Attachment      `bson:"valueAttachment" json:"valueAttachment"`
-	ValueBoolean         bool            `bson:"valueBoolean" json:"valueBoolean"`
+	Type                 CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
+	ValueCodeableConcept CodeableConcept `bson:"valueCodeableConcept,omitempty" json:"valueCodeableConcept,omitempty"`
+	ValueString          string          `bson:"valueString,omitempty" json:"valueString,omitempty"`
+	ValueQuantity        Quantity        `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
+	ValueBase64Binary    string          `bson:"valueBase64Binary,omitempty" json:"valueBase64Binary,omitempty"`
+	ValueAttachment      Attachment      `bson:"valueAttachment,omitempty" json:"valueAttachment,omitempty"`
+	ValueBoolean         bool            `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
 }
 type NutritionProductInstance struct {
 	Id                *string      `bson:"id,omitempty" json:"id,omitempty"`

@@ -32,8 +32,8 @@ type ManufacturedItemDefinition struct {
 	Extension            []Extension                          `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension                          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier           []Identifier                         `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status               PublicationStatus                    `bson:"status" json:"status"`
-	ManufacturedDoseForm CodeableConcept                      `bson:"manufacturedDoseForm" json:"manufacturedDoseForm"`
+	Status               PublicationStatus                    `bson:"status" json:"status,omitempty"`
+	ManufacturedDoseForm CodeableConcept                      `bson:"manufacturedDoseForm" json:"manufacturedDoseForm,omitempty"`
 	UnitOfPresentation   *CodeableConcept                     `bson:"unitOfPresentation,omitempty" json:"unitOfPresentation,omitempty"`
 	Manufacturer         []Reference                          `bson:"manufacturer,omitempty" json:"manufacturer,omitempty"`
 	Ingredient           []CodeableConcept                    `bson:"ingredient,omitempty" json:"ingredient,omitempty"`
@@ -43,7 +43,7 @@ type ManufacturedItemDefinitionProperty struct {
 	Id                   *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension            []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type                 CodeableConcept  `bson:"type" json:"type"`
+	Type                 CodeableConcept  `bson:"type" json:"type,omitempty"`
 	ValueCodeableConcept *CodeableConcept `bson:"valueCodeableConcept,omitempty" json:"valueCodeableConcept,omitempty"`
 	ValueQuantity        *Quantity        `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
 	ValueDate            *time.Time       `bson:"valueDate,omitempty" json:"valueDate,omitempty"`

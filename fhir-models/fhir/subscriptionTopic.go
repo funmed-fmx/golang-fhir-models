@@ -31,12 +31,12 @@ type SubscriptionTopic struct {
 	Text              *Narrative                           `bson:"text,omitempty" json:"text,omitempty"`
 	Extension         []Extension                          `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Url               string                               `bson:"url" json:"url"`
+	Url               string                               `bson:"url" json:"url,omitempty"`
 	Identifier        []Identifier                         `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	Version           *string                              `bson:"version,omitempty" json:"version,omitempty"`
 	Title             *string                              `bson:"title,omitempty" json:"title,omitempty"`
 	DerivedFrom       []string                             `bson:"derivedFrom,omitempty" json:"derivedFrom,omitempty"`
-	Status            PublicationStatus                    `bson:"status" json:"status"`
+	Status            PublicationStatus                    `bson:"status" json:"status,omitempty"`
 	Experimental      *bool                                `bson:"experimental,omitempty" json:"experimental,omitempty"`
 	Date              *time.Time                           `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher         *string                              `bson:"publisher,omitempty" json:"publisher,omitempty"`
@@ -59,7 +59,7 @@ type SubscriptionTopicResourceTrigger struct {
 	Extension            []Extension                                    `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension                                    `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Description          *string                                        `bson:"description,omitempty" json:"description,omitempty"`
-	Resource             string                                         `bson:"resource" json:"resource"`
+	Resource             string                                         `bson:"resource" json:"resource,omitempty"`
 	SupportedInteraction []InteractionTrigger                           `bson:"supportedInteraction,omitempty" json:"supportedInteraction,omitempty"`
 	QueryCriteria        *SubscriptionTopicResourceTriggerQueryCriteria `bson:"queryCriteria,omitempty" json:"queryCriteria,omitempty"`
 	FhirPathCriteria     *string                                        `bson:"fhirPathCriteria,omitempty" json:"fhirPathCriteria,omitempty"`
@@ -79,8 +79,8 @@ type SubscriptionTopicEventTrigger struct {
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Description       *string         `bson:"description,omitempty" json:"description,omitempty"`
-	Event             CodeableConcept `bson:"event" json:"event"`
-	Resource          string          `bson:"resource" json:"resource"`
+	Event             CodeableConcept `bson:"event" json:"event,omitempty"`
+	Resource          string          `bson:"resource" json:"resource,omitempty"`
 }
 type SubscriptionTopicCanFilterBy struct {
 	Id                *string                      `bson:"id,omitempty" json:"id,omitempty"`
@@ -88,7 +88,7 @@ type SubscriptionTopicCanFilterBy struct {
 	ModifierExtension []Extension                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Description       *string                      `bson:"description,omitempty" json:"description,omitempty"`
 	Resource          *string                      `bson:"resource,omitempty" json:"resource,omitempty"`
-	FilterParameter   string                       `bson:"filterParameter" json:"filterParameter"`
+	FilterParameter   string                       `bson:"filterParameter" json:"filterParameter,omitempty"`
 	FilterDefinition  *string                      `bson:"filterDefinition,omitempty" json:"filterDefinition,omitempty"`
 	Modifier          []SubscriptionSearchModifier `bson:"modifier,omitempty" json:"modifier,omitempty"`
 }
@@ -96,7 +96,7 @@ type SubscriptionTopicNotificationShape struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Resource          string      `bson:"resource" json:"resource"`
+	Resource          string      `bson:"resource" json:"resource,omitempty"`
 	Include           []string    `bson:"include,omitempty" json:"include,omitempty"`
 	RevInclude        []string    `bson:"revInclude,omitempty" json:"revInclude,omitempty"`
 }

@@ -29,7 +29,7 @@ type EvidenceReport struct {
 	Extension         []Extension               `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Url               *string                   `bson:"url,omitempty" json:"url,omitempty"`
-	Status            PublicationStatus         `bson:"status" json:"status"`
+	Status            PublicationStatus         `bson:"status,omitempty" json:"status,omitempty"`
 	UseContext        []UsageContext            `bson:"useContext,omitempty" json:"useContext,omitempty"`
 	Identifier        []Identifier              `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	RelatedIdentifier []Identifier              `bson:"relatedIdentifier,omitempty" json:"relatedIdentifier,omitempty"`
@@ -38,7 +38,7 @@ type EvidenceReport struct {
 	Type              *CodeableConcept          `bson:"type,omitempty" json:"type,omitempty"`
 	Note              []Annotation              `bson:"note,omitempty" json:"note,omitempty"`
 	RelatedArtifact   []RelatedArtifact         `bson:"relatedArtifact,omitempty" json:"relatedArtifact,omitempty"`
-	Subject           EvidenceReportSubject     `bson:"subject" json:"subject"`
+	Subject           EvidenceReportSubject     `bson:"subject,omitempty" json:"subject,omitempty"`
 	Publisher         *string                   `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact           []ContactDetail           `bson:"contact,omitempty" json:"contact,omitempty"`
 	Author            []ContactDetail           `bson:"author,omitempty" json:"author,omitempty"`
@@ -59,12 +59,12 @@ type EvidenceReportSubjectCharacteristic struct {
 	Id                   *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension            []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code                 CodeableConcept `bson:"code" json:"code"`
-	ValueReference       Reference       `bson:"valueReference" json:"valueReference"`
-	ValueCodeableConcept CodeableConcept `bson:"valueCodeableConcept" json:"valueCodeableConcept"`
-	ValueBoolean         bool            `bson:"valueBoolean" json:"valueBoolean"`
-	ValueQuantity        Quantity        `bson:"valueQuantity" json:"valueQuantity"`
-	ValueRange           Range           `bson:"valueRange" json:"valueRange"`
+	Code                 CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
+	ValueReference       Reference       `bson:"valueReference,omitempty" json:"valueReference,omitempty"`
+	ValueCodeableConcept CodeableConcept `bson:"valueCodeableConcept,omitempty" json:"valueCodeableConcept,omitempty"`
+	ValueBoolean         bool            `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
+	ValueQuantity        Quantity        `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
+	ValueRange           Range           `bson:"valueRange,omitempty" json:"valueRange,omitempty"`
 	Exclude              *bool           `bson:"exclude,omitempty" json:"exclude,omitempty"`
 	Period               *Period         `bson:"period,omitempty" json:"period,omitempty"`
 }
@@ -72,9 +72,9 @@ type EvidenceReportRelatesTo struct {
 	Id                *string                `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension            `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              ReportRelationshipType `bson:"code" json:"code"`
-	TargetIdentifier  Identifier             `bson:"targetIdentifier" json:"targetIdentifier"`
-	TargetReference   Reference              `bson:"targetReference" json:"targetReference"`
+	Code              ReportRelationshipType `bson:"code,omitempty" json:"code,omitempty"`
+	TargetIdentifier  Identifier             `bson:"targetIdentifier,omitempty" json:"targetIdentifier,omitempty"`
+	TargetReference   Reference              `bson:"targetReference,omitempty" json:"targetReference,omitempty"`
 }
 type EvidenceReportSection struct {
 	Id                *string                 `bson:"id,omitempty" json:"id,omitempty"`

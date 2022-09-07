@@ -32,7 +32,7 @@ type AdministrableProductDefinition struct {
 	Extension             []Extension                                           `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension     []Extension                                           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier            []Identifier                                          `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status                PublicationStatus                                     `bson:"status" json:"status"`
+	Status                PublicationStatus                                     `bson:"status,omitempty" json:"status,omitempty"`
 	FormOf                []Reference                                           `bson:"formOf,omitempty" json:"formOf,omitempty"`
 	AdministrableDoseForm *CodeableConcept                                      `bson:"administrableDoseForm,omitempty" json:"administrableDoseForm,omitempty"`
 	UnitOfPresentation    *CodeableConcept                                      `bson:"unitOfPresentation,omitempty" json:"unitOfPresentation,omitempty"`
@@ -40,13 +40,13 @@ type AdministrableProductDefinition struct {
 	Ingredient            []CodeableConcept                                     `bson:"ingredient,omitempty" json:"ingredient,omitempty"`
 	Device                *Reference                                            `bson:"device,omitempty" json:"device,omitempty"`
 	Property              []AdministrableProductDefinitionProperty              `bson:"property,omitempty" json:"property,omitempty"`
-	RouteOfAdministration []AdministrableProductDefinitionRouteOfAdministration `bson:"routeOfAdministration" json:"routeOfAdministration"`
+	RouteOfAdministration []AdministrableProductDefinitionRouteOfAdministration `bson:"routeOfAdministration,omitempty" json:"routeOfAdministration,omitempty"`
 }
 type AdministrableProductDefinitionProperty struct {
 	Id                   *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension            []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type                 CodeableConcept  `bson:"type" json:"type"`
+	Type                 CodeableConcept  `bson:"type,omitempty" json:"type,omitempty"`
 	ValueCodeableConcept *CodeableConcept `bson:"valueCodeableConcept,omitempty" json:"valueCodeableConcept,omitempty"`
 	ValueQuantity        *Quantity        `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
 	ValueDate            *time.Time       `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
@@ -58,7 +58,7 @@ type AdministrableProductDefinitionRouteOfAdministration struct {
 	Id                        *string                                                            `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                 []Extension                                                        `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension         []Extension                                                        `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code                      CodeableConcept                                                    `bson:"code" json:"code"`
+	Code                      CodeableConcept                                                    `bson:"code,omitempty" json:"code,omitempty"`
 	FirstDose                 *Quantity                                                          `bson:"firstDose,omitempty" json:"firstDose,omitempty"`
 	MaxSingleDose             *Quantity                                                          `bson:"maxSingleDose,omitempty" json:"maxSingleDose,omitempty"`
 	MaxDosePerDay             *Quantity                                                          `bson:"maxDosePerDay,omitempty" json:"maxDosePerDay,omitempty"`
@@ -70,15 +70,15 @@ type AdministrableProductDefinitionRouteOfAdministrationTargetSpecies struct {
 	Id                *string                                                                            `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                                                        `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                                                        `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              CodeableConcept                                                                    `bson:"code" json:"code"`
+	Code              CodeableConcept                                                                    `bson:"code,omitempty" json:"code,omitempty"`
 	WithdrawalPeriod  []AdministrableProductDefinitionRouteOfAdministrationTargetSpeciesWithdrawalPeriod `bson:"withdrawalPeriod,omitempty" json:"withdrawalPeriod,omitempty"`
 }
 type AdministrableProductDefinitionRouteOfAdministrationTargetSpeciesWithdrawalPeriod struct {
 	Id                    *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension             []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension     []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Tissue                CodeableConcept `bson:"tissue" json:"tissue"`
-	Value                 Quantity        `bson:"value" json:"value"`
+	Tissue                CodeableConcept `bson:"tissue,omitempty" json:"tissue,omitempty"`
+	Value                 Quantity        `bson:"value,omitempty" json:"value,omitempty"`
 	SupportingInformation *string         `bson:"supportingInformation,omitempty" json:"supportingInformation,omitempty"`
 }
 type OtherAdministrableProductDefinition AdministrableProductDefinition

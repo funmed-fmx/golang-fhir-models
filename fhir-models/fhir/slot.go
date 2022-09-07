@@ -33,10 +33,10 @@ type Slot struct {
 	ServiceType       []CodeableConcept `bson:"serviceType,omitempty" json:"serviceType,omitempty"`
 	Specialty         []CodeableConcept `bson:"specialty,omitempty" json:"specialty,omitempty"`
 	AppointmentType   *CodeableConcept  `bson:"appointmentType,omitempty" json:"appointmentType,omitempty"`
-	Schedule          Reference         `bson:"schedule" json:"schedule"`
-	Status            SlotStatus        `bson:"status" json:"status"`
-	Start             string            `bson:"start" json:"start"`
-	End               string            `bson:"end" json:"end"`
+	Schedule          Reference         `bson:"schedule" json:"schedule,omitempty"`
+	Status            SlotStatus        `bson:"status" json:"status,omitempty"`
+	Start             string            `bson:"start" json:"start,omitempty"`
+	End               string            `bson:"end" json:"end,omitempty"`
 	Overbooked        *bool             `bson:"overbooked,omitempty" json:"overbooked,omitempty"`
 	Comment           *string           `bson:"comment,omitempty" json:"comment,omitempty"`
 }

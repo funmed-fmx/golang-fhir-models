@@ -50,8 +50,8 @@ type LocationPosition struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Longitude         float64     `bson:"longitude" json:"longitude"`
-	Latitude          float64     `bson:"latitude" json:"latitude"`
+	Longitude         float64     `bson:"longitude" json:"longitude,omitempty"`
+	Latitude          float64     `bson:"latitude" json:"latitude,omitempty"`
 	Altitude          *float64    `bson:"altitude,omitempty" json:"altitude,omitempty"`
 }
 type LocationHoursOfOperation struct {

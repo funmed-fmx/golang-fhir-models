@@ -37,7 +37,7 @@ type Evidence struct {
 	Title              *string                      `bson:"title,omitempty" json:"title,omitempty"`
 	CiteAsReference    *Reference                   `bson:"citeAsReference,omitempty" json:"citeAsReference,omitempty"`
 	CiteAsMarkdown     *string                      `bson:"citeAsMarkdown,omitempty" json:"citeAsMarkdown,omitempty"`
-	Status             PublicationStatus            `bson:"status" json:"status"`
+	Status             PublicationStatus            `bson:"status" json:"status,omitempty"`
 	Date               *time.Time                   `bson:"date,omitempty" json:"date,omitempty"`
 	UseContext         []UsageContext               `bson:"useContext,omitempty" json:"useContext,omitempty"`
 	ApprovalDate       *time.Time                   `bson:"approvalDate,omitempty" json:"approvalDate,omitempty"`
@@ -52,7 +52,7 @@ type Evidence struct {
 	Description        *string                      `bson:"description,omitempty" json:"description,omitempty"`
 	Assertion          *string                      `bson:"assertion,omitempty" json:"assertion,omitempty"`
 	Note               []Annotation                 `bson:"note,omitempty" json:"note,omitempty"`
-	VariableDefinition []EvidenceVariableDefinition `bson:"variableDefinition" json:"variableDefinition"`
+	VariableDefinition []EvidenceVariableDefinition `bson:"variableDefinition" json:"variableDefinition,omitempty"`
 	SynthesisType      *CodeableConcept             `bson:"synthesisType,omitempty" json:"synthesisType,omitempty"`
 	StudyType          *CodeableConcept             `bson:"studyType,omitempty" json:"studyType,omitempty"`
 	Statistic          []EvidenceStatistic          `bson:"statistic,omitempty" json:"statistic,omitempty"`
@@ -64,7 +64,7 @@ type EvidenceVariableDefinition struct {
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Description       *string          `bson:"description,omitempty" json:"description,omitempty"`
 	Note              []Annotation     `bson:"note,omitempty" json:"note,omitempty"`
-	VariableRole      CodeableConcept  `bson:"variableRole" json:"variableRole"`
+	VariableRole      CodeableConcept  `bson:"variableRole" json:"variableRole,omitempty"`
 	Observed          *Reference       `bson:"observed,omitempty" json:"observed,omitempty"`
 	Intended          *Reference       `bson:"intended,omitempty" json:"intended,omitempty"`
 	DirectnessMatch   *CodeableConcept `bson:"directnessMatch,omitempty" json:"directnessMatch,omitempty"`
@@ -110,7 +110,7 @@ type EvidenceStatisticModelCharacteristic struct {
 	Id                *string                                        `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                    `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                    `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              CodeableConcept                                `bson:"code" json:"code"`
+	Code              CodeableConcept                                `bson:"code" json:"code,omitempty"`
 	Value             *Quantity                                      `bson:"value,omitempty" json:"value,omitempty"`
 	Variable          []EvidenceStatisticModelCharacteristicVariable `bson:"variable,omitempty" json:"variable,omitempty"`
 	AttributeEstimate []EvidenceStatisticAttributeEstimate           `bson:"attributeEstimate,omitempty" json:"attributeEstimate,omitempty"`
@@ -119,7 +119,7 @@ type EvidenceStatisticModelCharacteristicVariable struct {
 	Id                 *string                   `bson:"id,omitempty" json:"id,omitempty"`
 	Extension          []Extension               `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension  []Extension               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	VariableDefinition Reference                 `bson:"variableDefinition" json:"variableDefinition"`
+	VariableDefinition Reference                 `bson:"variableDefinition" json:"variableDefinition,omitempty"`
 	Handling           *EvidenceVariableHandling `bson:"handling,omitempty" json:"handling,omitempty"`
 	ValueCategory      []CodeableConcept         `bson:"valueCategory,omitempty" json:"valueCategory,omitempty"`
 	ValueQuantity      []Quantity                `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`

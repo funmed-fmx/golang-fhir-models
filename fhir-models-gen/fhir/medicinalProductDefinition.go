@@ -55,7 +55,7 @@ type MedicinalProductDefinition struct {
 	Contact                        []MedicinalProductDefinitionContact        `bson:"contact,omitempty" json:"contact,omitempty"`
 	ClinicalTrial                  []Reference                                `bson:"clinicalTrial,omitempty" json:"clinicalTrial,omitempty"`
 	Code                           []Coding                                   `bson:"code,omitempty" json:"code,omitempty"`
-	Name                           []MedicinalProductDefinitionName           `bson:"name" json:"name"`
+	Name                           []MedicinalProductDefinitionName           `bson:"name,omitempty" json:"name,omitempty"`
 	CrossReference                 []MedicinalProductDefinitionCrossReference `bson:"crossReference,omitempty" json:"crossReference,omitempty"`
 	Operation                      []MedicinalProductDefinitionOperation      `bson:"operation,omitempty" json:"operation,omitempty"`
 	Characteristic                 []MedicinalProductDefinitionCharacteristic `bson:"characteristic,omitempty" json:"characteristic,omitempty"`
@@ -65,13 +65,13 @@ type MedicinalProductDefinitionContact struct {
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              *CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
-	Contact           Reference        `bson:"contact" json:"contact"`
+	Contact           Reference        `bson:"contact,omitempty" json:"contact,omitempty"`
 }
 type MedicinalProductDefinitionName struct {
 	Id                *string                                         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	ProductName       string                                          `bson:"productName" json:"productName"`
+	ProductName       string                                          `bson:"productName,omitempty" json:"productName,omitempty"`
 	Type              *CodeableConcept                                `bson:"type,omitempty" json:"type,omitempty"`
 	NamePart          []MedicinalProductDefinitionNameNamePart        `bson:"namePart,omitempty" json:"namePart,omitempty"`
 	CountryLanguage   []MedicinalProductDefinitionNameCountryLanguage `bson:"countryLanguage,omitempty" json:"countryLanguage,omitempty"`
@@ -80,22 +80,22 @@ type MedicinalProductDefinitionNameNamePart struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Part              string          `bson:"part" json:"part"`
-	Type              CodeableConcept `bson:"type" json:"type"`
+	Part              string          `bson:"part,omitempty" json:"part,omitempty"`
+	Type              CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
 }
 type MedicinalProductDefinitionNameCountryLanguage struct {
 	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Country           CodeableConcept  `bson:"country" json:"country"`
+	Country           CodeableConcept  `bson:"country,omitempty" json:"country,omitempty"`
 	Jurisdiction      *CodeableConcept `bson:"jurisdiction,omitempty" json:"jurisdiction,omitempty"`
-	Language          CodeableConcept  `bson:"language" json:"language"`
+	Language          CodeableConcept  `bson:"language,omitempty" json:"language,omitempty"`
 }
 type MedicinalProductDefinitionCrossReference struct {
 	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Product           CodeableReference `bson:"product" json:"product"`
+	Product           CodeableReference `bson:"product,omitempty" json:"product,omitempty"`
 	Type              *CodeableConcept  `bson:"type,omitempty" json:"type,omitempty"`
 }
 type MedicinalProductDefinitionOperation struct {
@@ -111,7 +111,7 @@ type MedicinalProductDefinitionCharacteristic struct {
 	Id                   *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension            []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type                 CodeableConcept  `bson:"type" json:"type"`
+	Type                 CodeableConcept  `bson:"type,omitempty" json:"type,omitempty"`
 	ValueCodeableConcept *CodeableConcept `bson:"valueCodeableConcept,omitempty" json:"valueCodeableConcept,omitempty"`
 	ValueQuantity        *Quantity        `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
 	ValueDate            *time.Time       `bson:"valueDate,omitempty" json:"valueDate,omitempty"`

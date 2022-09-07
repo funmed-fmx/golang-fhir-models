@@ -35,11 +35,11 @@ type NutritionOrder struct {
 	InstantiatesCanonical  []string                      `bson:"instantiatesCanonical,omitempty" json:"instantiatesCanonical,omitempty"`
 	InstantiatesUri        []string                      `bson:"instantiatesUri,omitempty" json:"instantiatesUri,omitempty"`
 	Instantiates           []string                      `bson:"instantiates,omitempty" json:"instantiates,omitempty"`
-	Status                 RequestStatus                 `bson:"status" json:"status"`
-	Intent                 RequestIntent                 `bson:"intent" json:"intent"`
-	Patient                Reference                     `bson:"patient" json:"patient"`
+	Status                 RequestStatus                 `bson:"status" json:"status,omitempty"`
+	Intent                 RequestIntent                 `bson:"intent" json:"intent,omitempty"`
+	Patient                Reference                     `bson:"patient" json:"patient,omitempty"`
 	Encounter              *Reference                    `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	DateTime               time.Time                     `bson:"dateTime" json:"dateTime"`
+	DateTime               time.Time                     `bson:"dateTime" json:"dateTime,omitempty"`
 	Orderer                *Reference                    `bson:"orderer,omitempty" json:"orderer,omitempty"`
 	AllergyIntolerance     []Reference                   `bson:"allergyIntolerance,omitempty" json:"allergyIntolerance,omitempty"`
 	FoodPreferenceModifier []CodeableConcept             `bson:"foodPreferenceModifier,omitempty" json:"foodPreferenceModifier,omitempty"`

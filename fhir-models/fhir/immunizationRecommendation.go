@@ -32,10 +32,10 @@ type ImmunizationRecommendation struct {
 	Extension         []Extension                                `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier                               `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Patient           Reference                                  `bson:"patient" json:"patient"`
-	Date              time.Time                                  `bson:"date" json:"date"`
+	Patient           Reference                                  `bson:"patient" json:"patient,omitempty"`
+	Date              time.Time                                  `bson:"date" json:"date,omitempty"`
 	Authority         *Reference                                 `bson:"authority,omitempty" json:"authority,omitempty"`
-	Recommendation    []ImmunizationRecommendationRecommendation `bson:"recommendation" json:"recommendation"`
+	Recommendation    []ImmunizationRecommendationRecommendation `bson:"recommendation" json:"recommendation,omitempty"`
 }
 type ImmunizationRecommendationRecommendation struct {
 	Id                           *string                                                 `bson:"id,omitempty" json:"id,omitempty"`
@@ -44,7 +44,7 @@ type ImmunizationRecommendationRecommendation struct {
 	VaccineCode                  []CodeableConcept                                       `bson:"vaccineCode,omitempty" json:"vaccineCode,omitempty"`
 	TargetDisease                *CodeableConcept                                        `bson:"targetDisease,omitempty" json:"targetDisease,omitempty"`
 	ContraindicatedVaccineCode   []CodeableConcept                                       `bson:"contraindicatedVaccineCode,omitempty" json:"contraindicatedVaccineCode,omitempty"`
-	ForecastStatus               CodeableConcept                                         `bson:"forecastStatus" json:"forecastStatus"`
+	ForecastStatus               CodeableConcept                                         `bson:"forecastStatus" json:"forecastStatus,omitempty"`
 	ForecastReason               []CodeableConcept                                       `bson:"forecastReason,omitempty" json:"forecastReason,omitempty"`
 	DateCriterion                []ImmunizationRecommendationRecommendationDateCriterion `bson:"dateCriterion,omitempty" json:"dateCriterion,omitempty"`
 	Description                  *string                                                 `bson:"description,omitempty" json:"description,omitempty"`
@@ -60,8 +60,8 @@ type ImmunizationRecommendationRecommendationDateCriterion struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              CodeableConcept `bson:"code" json:"code"`
-	Value             time.Time       `bson:"value" json:"value"`
+	Code              CodeableConcept `bson:"code" json:"code,omitempty"`
+	Value             time.Time       `bson:"value" json:"value,omitempty"`
 }
 type OtherImmunizationRecommendation ImmunizationRecommendation
 

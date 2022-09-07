@@ -69,7 +69,7 @@ type SubstanceDefinitionProperty struct {
 	Id                   *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension            []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type                 CodeableConcept  `bson:"type" json:"type"`
+	Type                 CodeableConcept  `bson:"type,omitempty" json:"type,omitempty"`
 	ValueCodeableConcept *CodeableConcept `bson:"valueCodeableConcept,omitempty" json:"valueCodeableConcept,omitempty"`
 	ValueQuantity        *Quantity        `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
 	ValueDate            *time.Time       `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
@@ -82,7 +82,7 @@ type SubstanceDefinitionMolecularWeight struct {
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Method            *CodeableConcept `bson:"method,omitempty" json:"method,omitempty"`
 	Type              *CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
-	Amount            Quantity         `bson:"amount" json:"amount"`
+	Amount            Quantity         `bson:"amount,omitempty" json:"amount,omitempty"`
 }
 type SubstanceDefinitionStructure struct {
 	Id                       *string                                      `bson:"id,omitempty" json:"id,omitempty"`
@@ -120,7 +120,7 @@ type SubstanceDefinitionName struct {
 	Id                *string                           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Name              string                            `bson:"name" json:"name"`
+	Name              string                            `bson:"name,omitempty" json:"name,omitempty"`
 	Type              *CodeableConcept                  `bson:"type,omitempty" json:"type,omitempty"`
 	Status            *CodeableConcept                  `bson:"status,omitempty" json:"status,omitempty"`
 	Preferred         *bool                             `bson:"preferred,omitempty" json:"preferred,omitempty"`
@@ -146,7 +146,7 @@ type SubstanceDefinitionRelationship struct {
 	ModifierExtension                  []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	SubstanceDefinitionReference       *Reference       `bson:"substanceDefinitionReference,omitempty" json:"substanceDefinitionReference,omitempty"`
 	SubstanceDefinitionCodeableConcept *CodeableConcept `bson:"substanceDefinitionCodeableConcept,omitempty" json:"substanceDefinitionCodeableConcept,omitempty"`
-	Type                               CodeableConcept  `bson:"type" json:"type"`
+	Type                               CodeableConcept  `bson:"type,omitempty" json:"type,omitempty"`
 	IsDefining                         *bool            `bson:"isDefining,omitempty" json:"isDefining,omitempty"`
 	AmountQuantity                     *Quantity        `bson:"amountQuantity,omitempty" json:"amountQuantity,omitempty"`
 	AmountRatio                        *Ratio           `bson:"amountRatio,omitempty" json:"amountRatio,omitempty"`

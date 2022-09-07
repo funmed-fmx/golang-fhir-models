@@ -29,7 +29,7 @@ type ClinicalUseDefinition struct {
 	Extension         []Extension                             `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                             `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier                            `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Type              ClinicalUseDefinitionType               `bson:"type" json:"type"`
+	Type              ClinicalUseDefinitionType               `bson:"type,omitempty" json:"type,omitempty"`
 	Category          []CodeableConcept                       `bson:"category,omitempty" json:"category,omitempty"`
 	Subject           []Reference                             `bson:"subject,omitempty" json:"subject,omitempty"`
 	Status            *CodeableConcept                        `bson:"status,omitempty" json:"status,omitempty"`
@@ -54,8 +54,8 @@ type ClinicalUseDefinitionContraindicationOtherTherapy struct {
 	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	RelationshipType  CodeableConcept   `bson:"relationshipType" json:"relationshipType"`
-	Therapy           CodeableReference `bson:"therapy" json:"therapy"`
+	RelationshipType  CodeableConcept   `bson:"relationshipType,omitempty" json:"relationshipType,omitempty"`
+	Therapy           CodeableReference `bson:"therapy,omitempty" json:"therapy,omitempty"`
 }
 type ClinicalUseDefinitionIndication struct {
 	Id                      *string                                             `bson:"id,omitempty" json:"id,omitempty"`
@@ -84,8 +84,8 @@ type ClinicalUseDefinitionInteractionInteractant struct {
 	Id                  *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension           []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension   []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	ItemReference       Reference       `bson:"itemReference" json:"itemReference"`
-	ItemCodeableConcept CodeableConcept `bson:"itemCodeableConcept" json:"itemCodeableConcept"`
+	ItemReference       Reference       `bson:"itemReference,omitempty" json:"itemReference,omitempty"`
+	ItemCodeableConcept CodeableConcept `bson:"itemCodeableConcept,omitempty" json:"itemCodeableConcept,omitempty"`
 }
 type ClinicalUseDefinitionUndesirableEffect struct {
 	Id                     *string            `bson:"id,omitempty" json:"id,omitempty"`

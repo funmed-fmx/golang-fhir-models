@@ -81,7 +81,7 @@ type PackagedProductDefinitionPackageProperty struct {
 	Id                   *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension            []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type                 CodeableConcept  `bson:"type" json:"type"`
+	Type                 CodeableConcept  `bson:"type,omitempty" json:"type,omitempty"`
 	ValueCodeableConcept *CodeableConcept `bson:"valueCodeableConcept,omitempty" json:"valueCodeableConcept,omitempty"`
 	ValueQuantity        *Quantity        `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
 	ValueDate            *time.Time       `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
@@ -92,7 +92,7 @@ type PackagedProductDefinitionPackageContainedItem struct {
 	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Item              CodeableReference `bson:"item" json:"item"`
+	Item              CodeableReference `bson:"item,omitempty" json:"item,omitempty"`
 	Amount            *Quantity         `bson:"amount,omitempty" json:"amount,omitempty"`
 }
 type OtherPackagedProductDefinition PackagedProductDefinition
