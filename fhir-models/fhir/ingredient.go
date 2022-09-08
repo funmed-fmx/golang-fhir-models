@@ -29,26 +29,26 @@ type Ingredient struct {
 	Extension           []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension   []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier          *Identifier              `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status              PublicationStatus        `bson:"status" json:"status,omitempty"`
+	Status              PublicationStatus        `bson:"status,omitempty" json:"status,omitempty"`
 	For                 []Reference              `bson:"for,omitempty" json:"for,omitempty"`
-	Role                CodeableConcept          `bson:"role" json:"role,omitempty"`
+	Role                CodeableConcept          `bson:"role,omitempty" json:"role,omitempty"`
 	Function            []CodeableConcept        `bson:"function,omitempty" json:"function,omitempty"`
 	AllergenicIndicator *bool                    `bson:"allergenicIndicator,omitempty" json:"allergenicIndicator,omitempty"`
 	Manufacturer        []IngredientManufacturer `bson:"manufacturer,omitempty" json:"manufacturer,omitempty"`
-	Substance           IngredientSubstance      `bson:"substance" json:"substance,omitempty"`
+	Substance           IngredientSubstance      `bson:"substance,omitempty" json:"substance,omitempty"`
 }
 type IngredientManufacturer struct {
 	Id                *string                     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                 `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                 `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Role              *IngredientManufacturerRole `bson:"role,omitempty" json:"role,omitempty"`
-	Manufacturer      Reference                   `bson:"manufacturer" json:"manufacturer,omitempty"`
+	Manufacturer      Reference                   `bson:"manufacturer,omitempty" json:"manufacturer,omitempty"`
 }
 type IngredientSubstance struct {
 	Id                *string                       `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                   `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                   `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              CodeableReference             `bson:"code" json:"code,omitempty"`
+	Code              CodeableReference             `bson:"code,omitempty" json:"code,omitempty"`
 	Strength          []IngredientSubstanceStrength `bson:"strength,omitempty" json:"strength,omitempty"`
 }
 type IngredientSubstanceStrength struct {
@@ -70,8 +70,8 @@ type IngredientSubstanceStrengthReferenceStrength struct {
 	Extension          []Extension        `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension  []Extension        `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Substance          *CodeableReference `bson:"substance,omitempty" json:"substance,omitempty"`
-	StrengthRatio      Ratio              `bson:"strengthRatio" json:"strengthRatio,omitempty"`
-	StrengthRatioRange RatioRange         `bson:"strengthRatioRange" json:"strengthRatioRange,omitempty"`
+	StrengthRatio      Ratio              `bson:"strengthRatio,omitempty" json:"strengthRatio,omitempty"`
+	StrengthRatioRange RatioRange         `bson:"strengthRatioRange,omitempty" json:"strengthRatioRange,omitempty"`
 	MeasurementPoint   *string            `bson:"measurementPoint,omitempty" json:"measurementPoint,omitempty"`
 	Country            []CodeableConcept  `bson:"country,omitempty" json:"country,omitempty"`
 }

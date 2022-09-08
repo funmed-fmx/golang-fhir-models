@@ -495,9 +495,9 @@ func typeCodeToTypeIdentifier(typeCode string) string {
 	case "code":
 		return "string"
 	case "date":
-		return "time.Time"
+		return "string"
 	case "dateTime":
-		return "time.Time"
+		return "string"
 	case "decimal":
 		return "float64"
 	case "id":
