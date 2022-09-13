@@ -439,6 +439,13 @@ func addFieldStatement(
 			statement.Op("[]")
 		} else if *element.Min == 0 {
 			statement.Op("*")
+		} else {
+			if Contains(parentName, "Questionnaire") {
+				if elementType.Code != "Coding" && elementType.Code != "Quantity" &&
+					elementType.Code != "Reference" && elementType.Code != "Attachment" {
+					statement.Op("*")
+				}
+			}
 		}
 
 		var typeIdentifier string

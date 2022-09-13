@@ -55,7 +55,7 @@ type QuestionnaireItem struct {
 	Id                *string                         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	LinkId            string                          `bson:"linkId,omitempty" json:"linkId,omitempty"`
+	LinkId            *string                         `bson:"linkId,omitempty" json:"linkId,omitempty"`
 	Definition        *string                         `bson:"definition,omitempty" json:"definition,omitempty"`
 	Code              []Coding                        `bson:"code,omitempty" json:"code,omitempty"`
 	Prefix            *string                         `bson:"prefix,omitempty" json:"prefix,omitempty"`
@@ -76,15 +76,15 @@ type QuestionnaireItemEnableWhen struct {
 	Id                *string                   `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension               `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Question          string                    `bson:"question,omitempty" json:"question,omitempty"`
+	Question          *string                   `bson:"question,omitempty" json:"question,omitempty"`
 	Operator          QuestionnaireItemOperator `bson:"operator,omitempty" json:"operator,omitempty"`
-	AnswerBoolean     bool                      `bson:"answerBoolean,omitempty" json:"answerBoolean,omitempty"`
-	AnswerDecimal     float64                   `bson:"answerDecimal,omitempty" json:"answerDecimal,omitempty"`
-	AnswerInteger     int                       `bson:"answerInteger,omitempty" json:"answerInteger,omitempty"`
-	AnswerDate        string                    `bson:"answerDate,omitempty" json:"answerDate,omitempty"`
-	AnswerDateTime    string                    `bson:"answerDateTime,omitempty" json:"answerDateTime,omitempty"`
-	AnswerTime        string                    `bson:"answerTime,omitempty" json:"answerTime,omitempty"`
-	AnswerString      string                    `bson:"answerString,omitempty" json:"answerString,omitempty"`
+	AnswerBoolean     *bool                     `bson:"answerBoolean,omitempty" json:"answerBoolean,omitempty"`
+	AnswerDecimal     *float64                  `bson:"answerDecimal,omitempty" json:"answerDecimal,omitempty"`
+	AnswerInteger     *int                      `bson:"answerInteger,omitempty" json:"answerInteger,omitempty"`
+	AnswerDate        *string                   `bson:"answerDate,omitempty" json:"answerDate,omitempty"`
+	AnswerDateTime    *string                   `bson:"answerDateTime,omitempty" json:"answerDateTime,omitempty"`
+	AnswerTime        *string                   `bson:"answerTime,omitempty" json:"answerTime,omitempty"`
+	AnswerString      *string                   `bson:"answerString,omitempty" json:"answerString,omitempty"`
 	AnswerCoding      Coding                    `bson:"answerCoding,omitempty" json:"answerCoding,omitempty"`
 	AnswerQuantity    Quantity                  `bson:"answerQuantity,omitempty" json:"answerQuantity,omitempty"`
 	AnswerReference   Reference                 `bson:"answerReference,omitempty" json:"answerReference,omitempty"`
@@ -93,10 +93,10 @@ type QuestionnaireItemAnswerOption struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	ValueInteger      int         `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
-	ValueDate         string      `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
-	ValueTime         string      `bson:"valueTime,omitempty" json:"valueTime,omitempty"`
-	ValueString       string      `bson:"valueString,omitempty" json:"valueString,omitempty"`
+	ValueInteger      *int        `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
+	ValueDate         *string     `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
+	ValueTime         *string     `bson:"valueTime,omitempty" json:"valueTime,omitempty"`
+	ValueString       *string     `bson:"valueString,omitempty" json:"valueString,omitempty"`
 	ValueCoding       Coding      `bson:"valueCoding,omitempty" json:"valueCoding,omitempty"`
 	ValueReference    Reference   `bson:"valueReference,omitempty" json:"valueReference,omitempty"`
 	InitialSelected   *bool       `bson:"initialSelected,omitempty" json:"initialSelected,omitempty"`
@@ -105,14 +105,14 @@ type QuestionnaireItemInitial struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	ValueBoolean      bool        `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
-	ValueDecimal      float64     `bson:"valueDecimal,omitempty" json:"valueDecimal,omitempty"`
-	ValueInteger      int         `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
-	ValueDate         string      `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
-	ValueDateTime     string      `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
-	ValueTime         string      `bson:"valueTime,omitempty" json:"valueTime,omitempty"`
-	ValueString       string      `bson:"valueString,omitempty" json:"valueString,omitempty"`
-	ValueUri          string      `bson:"valueUri,omitempty" json:"valueUri,omitempty"`
+	ValueBoolean      *bool       `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
+	ValueDecimal      *float64    `bson:"valueDecimal,omitempty" json:"valueDecimal,omitempty"`
+	ValueInteger      *int        `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
+	ValueDate         *string     `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
+	ValueDateTime     *string     `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
+	ValueTime         *string     `bson:"valueTime,omitempty" json:"valueTime,omitempty"`
+	ValueString       *string     `bson:"valueString,omitempty" json:"valueString,omitempty"`
+	ValueUri          *string     `bson:"valueUri,omitempty" json:"valueUri,omitempty"`
 	ValueAttachment   Attachment  `bson:"valueAttachment,omitempty" json:"valueAttachment,omitempty"`
 	ValueCoding       Coding      `bson:"valueCoding,omitempty" json:"valueCoding,omitempty"`
 	ValueQuantity     Quantity    `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
