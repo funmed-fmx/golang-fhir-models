@@ -55,7 +55,7 @@ type QuestionnaireItem struct {
 	Id                *string                         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	LinkId            *string                         `bson:"linkId,omitempty" json:"linkId,omitempty"`
+	LinkId            string                          `bson:"linkId,omitempty" json:"linkId,omitempty"`
 	Definition        *string                         `bson:"definition,omitempty" json:"definition,omitempty"`
 	Code              []Coding                        `bson:"code,omitempty" json:"code,omitempty"`
 	Prefix            *string                         `bson:"prefix,omitempty" json:"prefix,omitempty"`
