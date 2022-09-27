@@ -401,6 +401,10 @@ func addFieldStatement(
 			statement.Op("[]")
 		} else if *element.Min == 0 {
 			statement.Op("*")
+		} else {
+			if Contains(parentName, "QuestionnaireItem") {
+				statement.Op("*")
+			}
 		}
 
 		if url := requiredValueSetBinding(element); url != nil {

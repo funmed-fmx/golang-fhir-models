@@ -60,7 +60,7 @@ type QuestionnaireItem struct {
 	Code              []Coding                        `bson:"code,omitempty" json:"code,omitempty"`
 	Prefix            *string                         `bson:"prefix,omitempty" json:"prefix,omitempty"`
 	Text              *string                         `bson:"text,omitempty" json:"text,omitempty"`
-	Type              QuestionnaireItemType           `bson:"type,omitempty" json:"type,omitempty"`
+	Type              *QuestionnaireItemType          `bson:"type,omitempty" json:"type,omitempty"`
 	EnableWhen        []QuestionnaireItemEnableWhen   `bson:"enableWhen,omitempty" json:"enableWhen,omitempty"`
 	EnableBehavior    *EnableWhenBehavior             `bson:"enableBehavior,omitempty" json:"enableBehavior,omitempty"`
 	Required          *bool                           `bson:"required,omitempty" json:"required,omitempty"`
@@ -73,21 +73,21 @@ type QuestionnaireItem struct {
 	Item              []QuestionnaireItem             `bson:"item,omitempty" json:"item,omitempty"`
 }
 type QuestionnaireItemEnableWhen struct {
-	Id                *string                   `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension               `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Question          *string                   `bson:"question,omitempty" json:"question,omitempty"`
-	Operator          QuestionnaireItemOperator `bson:"operator,omitempty" json:"operator,omitempty"`
-	AnswerBoolean     *bool                     `bson:"answerBoolean,omitempty" json:"answerBoolean,omitempty"`
-	AnswerDecimal     *float64                  `bson:"answerDecimal,omitempty" json:"answerDecimal,omitempty"`
-	AnswerInteger     *int                      `bson:"answerInteger,omitempty" json:"answerInteger,omitempty"`
-	AnswerDate        *string                   `bson:"answerDate,omitempty" json:"answerDate,omitempty"`
-	AnswerDateTime    *string                   `bson:"answerDateTime,omitempty" json:"answerDateTime,omitempty"`
-	AnswerTime        *string                   `bson:"answerTime,omitempty" json:"answerTime,omitempty"`
-	AnswerString      *string                   `bson:"answerString,omitempty" json:"answerString,omitempty"`
-	AnswerCoding      Coding                    `bson:"answerCoding,omitempty" json:"answerCoding,omitempty"`
-	AnswerQuantity    Quantity                  `bson:"answerQuantity,omitempty" json:"answerQuantity,omitempty"`
-	AnswerReference   Reference                 `bson:"answerReference,omitempty" json:"answerReference,omitempty"`
+	Id                *string                    `bson:"id,omitempty" json:"id,omitempty"`
+	Extension         []Extension                `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension []Extension                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Question          *string                    `bson:"question,omitempty" json:"question,omitempty"`
+	Operator          *QuestionnaireItemOperator `bson:"operator,omitempty" json:"operator,omitempty"`
+	AnswerBoolean     *bool                      `bson:"answerBoolean,omitempty" json:"answerBoolean,omitempty"`
+	AnswerDecimal     *float64                   `bson:"answerDecimal,omitempty" json:"answerDecimal,omitempty"`
+	AnswerInteger     *int                       `bson:"answerInteger,omitempty" json:"answerInteger,omitempty"`
+	AnswerDate        *string                    `bson:"answerDate,omitempty" json:"answerDate,omitempty"`
+	AnswerDateTime    *string                    `bson:"answerDateTime,omitempty" json:"answerDateTime,omitempty"`
+	AnswerTime        *string                    `bson:"answerTime,omitempty" json:"answerTime,omitempty"`
+	AnswerString      *string                    `bson:"answerString,omitempty" json:"answerString,omitempty"`
+	AnswerCoding      Coding                     `bson:"answerCoding,omitempty" json:"answerCoding,omitempty"`
+	AnswerQuantity    Quantity                   `bson:"answerQuantity,omitempty" json:"answerQuantity,omitempty"`
+	AnswerReference   Reference                  `bson:"answerReference,omitempty" json:"answerReference,omitempty"`
 }
 type QuestionnaireItemAnswerOption struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
