@@ -405,6 +405,11 @@ func addFieldStatement(
 			if Contains(parentName, "QuestionnaireItem") {
 				statement.Op("*")
 			}
+			if Contains(parentName, "QuestionnaireResponse") {
+				if fieldName == "Status" {
+					statement.Op("*")
+				}
+			}
 		}
 
 		if url := requiredValueSetBinding(element); url != nil {
