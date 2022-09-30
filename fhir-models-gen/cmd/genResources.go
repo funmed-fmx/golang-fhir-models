@@ -405,7 +405,7 @@ func addFieldStatement(
 			if Contains(parentName, "QuestionnaireItem") {
 				statement.Op("*")
 			}
-			if Contains(parentName, "QuestionnaireResponse") {
+			if Contains(parentName, "Questionnaire") || Contains(parentName, "QuestionnaireResponse") {
 				if fieldName == "Status" {
 					statement.Op("*")
 				}
