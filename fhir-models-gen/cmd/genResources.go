@@ -405,7 +405,7 @@ func addFieldStatement(
 			if Contains(parentName, "QuestionnaireItem") {
 				statement.Op("*")
 			}
-			if Contains(parentName, "Questionnaire") || Contains(parentName, "QuestionnaireResponse") {
+			if Contains(parentName, "QuestionnaireResponse") {
 				if fieldName == "Status" {
 					statement.Op("*")
 				}
@@ -450,9 +450,7 @@ func addFieldStatement(
 			statement.Op("*")
 		} else {
 			if Contains(parentName, "Questionnaire") {
-				if elementType.Code != "Coding" && elementType.Code != "Quantity" &&
-					elementType.Code != "Reference" && elementType.Code != "Attachment" &&
-					fieldName != "LinkId" {
+				if fieldName != "LinkId" {
 					statement.Op("*")
 				}
 			}
