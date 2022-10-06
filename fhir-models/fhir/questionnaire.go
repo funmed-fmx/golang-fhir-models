@@ -34,7 +34,7 @@ type Questionnaire struct {
 	Name              *string             `bson:"name,omitempty" json:"name,omitempty"`
 	Title             *string             `bson:"title,omitempty" json:"title,omitempty"`
 	DerivedFrom       []string            `bson:"derivedFrom,omitempty" json:"derivedFrom,omitempty"`
-	Status            *PublicationStatus  `bson:"status,omitempty" json:"status,omitempty"`
+	Status            PublicationStatus   `bson:"status,omitempty" json:"status,omitempty"`
 	Experimental      *bool               `bson:"experimental,omitempty" json:"experimental,omitempty"`
 	SubjectType       []ResourceType      `bson:"subjectType,omitempty" json:"subjectType,omitempty"`
 	Date              *string             `bson:"date,omitempty" json:"date,omitempty"`
@@ -85,9 +85,9 @@ type QuestionnaireItemEnableWhen struct {
 	AnswerDateTime    *string                    `bson:"answerDateTime,omitempty" json:"answerDateTime,omitempty"`
 	AnswerTime        *string                    `bson:"answerTime,omitempty" json:"answerTime,omitempty"`
 	AnswerString      *string                    `bson:"answerString,omitempty" json:"answerString,omitempty"`
-	AnswerCoding      Coding                     `bson:"answerCoding,omitempty" json:"answerCoding,omitempty"`
-	AnswerQuantity    Quantity                   `bson:"answerQuantity,omitempty" json:"answerQuantity,omitempty"`
-	AnswerReference   Reference                  `bson:"answerReference,omitempty" json:"answerReference,omitempty"`
+	AnswerCoding      *Coding                    `bson:"answerCoding,omitempty" json:"answerCoding,omitempty"`
+	AnswerQuantity    *Quantity                  `bson:"answerQuantity,omitempty" json:"answerQuantity,omitempty"`
+	AnswerReference   *Reference                 `bson:"answerReference,omitempty" json:"answerReference,omitempty"`
 }
 type QuestionnaireItemAnswerOption struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
@@ -97,8 +97,8 @@ type QuestionnaireItemAnswerOption struct {
 	ValueDate         *string     `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
 	ValueTime         *string     `bson:"valueTime,omitempty" json:"valueTime,omitempty"`
 	ValueString       *string     `bson:"valueString,omitempty" json:"valueString,omitempty"`
-	ValueCoding       Coding      `bson:"valueCoding,omitempty" json:"valueCoding,omitempty"`
-	ValueReference    Reference   `bson:"valueReference,omitempty" json:"valueReference,omitempty"`
+	ValueCoding       *Coding     `bson:"valueCoding,omitempty" json:"valueCoding,omitempty"`
+	ValueReference    *Reference  `bson:"valueReference,omitempty" json:"valueReference,omitempty"`
 	InitialSelected   *bool       `bson:"initialSelected,omitempty" json:"initialSelected,omitempty"`
 }
 type QuestionnaireItemInitial struct {
@@ -113,10 +113,10 @@ type QuestionnaireItemInitial struct {
 	ValueTime         *string     `bson:"valueTime,omitempty" json:"valueTime,omitempty"`
 	ValueString       *string     `bson:"valueString,omitempty" json:"valueString,omitempty"`
 	ValueUri          *string     `bson:"valueUri,omitempty" json:"valueUri,omitempty"`
-	ValueAttachment   Attachment  `bson:"valueAttachment,omitempty" json:"valueAttachment,omitempty"`
-	ValueCoding       Coding      `bson:"valueCoding,omitempty" json:"valueCoding,omitempty"`
-	ValueQuantity     Quantity    `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
-	ValueReference    Reference   `bson:"valueReference,omitempty" json:"valueReference,omitempty"`
+	ValueAttachment   *Attachment `bson:"valueAttachment,omitempty" json:"valueAttachment,omitempty"`
+	ValueCoding       *Coding     `bson:"valueCoding,omitempty" json:"valueCoding,omitempty"`
+	ValueQuantity     *Quantity   `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
+	ValueReference    *Reference  `bson:"valueReference,omitempty" json:"valueReference,omitempty"`
 }
 type OtherQuestionnaire Questionnaire
 
