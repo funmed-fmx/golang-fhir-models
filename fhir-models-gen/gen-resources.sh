@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 wget -O definitions.zip https://www.hl7.org/fhir/definitions.json.zip
-unzip -o definitions.zip definitions.json/profiles-types.json definitions.json/valuesets.json
+unzip -o definitions.zip definitions.json/profiles-types.json definitions.json/valuesets.json definitions.json/profiles-resources.json
 mv definitions.json/profiles-types.json fhir/
 mv definitions.json/valuesets.json fhir/
+mv definitions.json/profiles-resources.json fhir/
 rm -rf definitions.zip definitions.json
 
 wget -O fhir/bundle.json http://hl7.org/fhir/bundle.profile.json
