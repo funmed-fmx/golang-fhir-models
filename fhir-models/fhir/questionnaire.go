@@ -34,7 +34,7 @@ type Questionnaire struct {
 	Name              *string             `bson:"name,omitempty" json:"name,omitempty"`
 	Title             *string             `bson:"title,omitempty" json:"title,omitempty"`
 	DerivedFrom       []string            `bson:"derivedFrom,omitempty" json:"derivedFrom,omitempty"`
-	Status            PublicationStatus   `bson:"status,omitempty" json:"status,omitempty"`
+	Status            *PublicationStatus  `bson:"status,omitempty" json:"status,omitempty"`
 	Experimental      *bool               `bson:"experimental,omitempty" json:"experimental,omitempty"`
 	SubjectType       []ResourceType      `bson:"subjectType,omitempty" json:"subjectType,omitempty"`
 	Date              *string             `bson:"date,omitempty" json:"date,omitempty"`
