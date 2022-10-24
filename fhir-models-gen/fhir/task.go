@@ -34,7 +34,7 @@ type Task struct {
 	BasedOn               []Reference       `bson:"basedOn,omitempty" json:"basedOn,omitempty"`
 	GroupIdentifier       *Identifier       `bson:"groupIdentifier,omitempty" json:"groupIdentifier,omitempty"`
 	PartOf                []Reference       `bson:"partOf,omitempty" json:"partOf,omitempty"`
-	Status                TaskStatus        `bson:"status,omitempty" json:"status,omitempty"`
+	Status                *TaskStatus       `bson:"status,omitempty" json:"status,omitempty"`
 	StatusReason          *CodeableConcept  `bson:"statusReason,omitempty" json:"statusReason,omitempty"`
 	BusinessStatus        *CodeableConcept  `bson:"businessStatus,omitempty" json:"businessStatus,omitempty"`
 	Intent                string            `bson:"intent,omitempty" json:"intent,omitempty"`

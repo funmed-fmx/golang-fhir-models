@@ -402,10 +402,11 @@ func addFieldStatement(
 		} else if *element.Min == 0 {
 			statement.Op("*")
 		} else {
-			if Contains(parentName, "QuestionnaireItem") {
+			if parentName == "Task" && fieldName == "Status" {
 				statement.Op("*")
-			}
-			if Contains(parentName, "Questionnaire") {
+			} else if Contains(parentName, "QuestionnaireItem") {
+				statement.Op("*")
+			} else if Contains(parentName, "Questionnaire") {
 				if fieldName == "Status" {
 					statement.Op("*")
 				}
