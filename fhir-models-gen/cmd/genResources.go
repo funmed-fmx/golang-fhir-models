@@ -27,7 +27,19 @@ import (
 	"github.com/dave/jennifer/jen"
 	"github.com/funmed-ally/golang-fhir-models/fhir-models-gen/fhir"
 	"github.com/spf13/cobra"
+	"golang.org/x/exp/slices"
 )
+
+var baseFields = []string{
+	"string",
+	"int",
+	"int32",
+	"int64",
+	"float",
+	"float32",
+	"float64",
+	"bool",
+}
 
 type Resource struct {
 	ResourceType string
@@ -450,10 +462,9 @@ func addFieldStatement(
 		} else if *element.Min == 0 {
 			statement.Op("*")
 		} else {
-			if Contains(parentName, "Questionnaire") {
-				if fieldName != "LinkId" {
-					statement.Op("*")
-				}
+			if (Contains(parentName, "Questionnaire") && fieldName != "LinkId") ||
+				(Contains(parentName, "Task") && !slices.Contains(baseFields, typeCodeToTypeIdentifier(elementType.Code))) {
+				statement.Op("*")
 			}
 		}
 
