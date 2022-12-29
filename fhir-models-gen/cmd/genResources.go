@@ -422,6 +422,8 @@ func addFieldStatement(
 				if fieldName == "Status" {
 					statement.Op("*")
 				}
+			} else if parentName == "TaskOutput" || parentName == "TaskInput" {
+				statement.Op("*")
 			}
 		}
 
@@ -464,6 +466,9 @@ func addFieldStatement(
 		} else {
 			if (Contains(parentName, "Questionnaire") && fieldName != "LinkId") ||
 				(Contains(parentName, "Task") && !slices.Contains(baseFields, typeCodeToTypeIdentifier(elementType.Code))) {
+				statement.Op("*")
+			}
+			if parentName == "TaskOutput" || parentName == "TaskInput" {
 				statement.Op("*")
 			}
 		}

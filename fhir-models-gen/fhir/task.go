@@ -73,25 +73,25 @@ type TaskInput struct {
 	Extension                []Extension          `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension        []Extension          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type                     *CodeableConcept     `bson:"type,omitempty" json:"type,omitempty"`
-	ValueBase64Binary        string               `bson:"valueBase64Binary,omitempty" json:"valueBase64Binary,omitempty"`
-	ValueBoolean             bool                 `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
-	ValueCanonical           string               `bson:"valueCanonical,omitempty" json:"valueCanonical,omitempty"`
-	ValueCode                string               `bson:"valueCode,omitempty" json:"valueCode,omitempty"`
-	ValueDate                string               `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
-	ValueDateTime            string               `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
-	ValueDecimal             float64              `bson:"valueDecimal,omitempty" json:"valueDecimal,omitempty"`
-	ValueId                  string               `bson:"valueId,omitempty" json:"valueId,omitempty"`
-	ValueInstant             string               `bson:"valueInstant,omitempty" json:"valueInstant,omitempty"`
-	ValueInteger             int                  `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
-	ValueMarkdown            string               `bson:"valueMarkdown,omitempty" json:"valueMarkdown,omitempty"`
-	ValueOid                 string               `bson:"valueOid,omitempty" json:"valueOid,omitempty"`
-	ValuePositiveInt         int                  `bson:"valuePositiveInt,omitempty" json:"valuePositiveInt,omitempty"`
-	ValueString              string               `bson:"valueString,omitempty" json:"valueString,omitempty"`
-	ValueTime                string               `bson:"valueTime,omitempty" json:"valueTime,omitempty"`
-	ValueUnsignedInt         int                  `bson:"valueUnsignedInt,omitempty" json:"valueUnsignedInt,omitempty"`
-	ValueUri                 string               `bson:"valueUri,omitempty" json:"valueUri,omitempty"`
-	ValueUrl                 string               `bson:"valueUrl,omitempty" json:"valueUrl,omitempty"`
-	ValueUuid                string               `bson:"valueUuid,omitempty" json:"valueUuid,omitempty"`
+	ValueBase64Binary        *string              `bson:"valueBase64Binary,omitempty" json:"valueBase64Binary,omitempty"`
+	ValueBoolean             *bool                `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
+	ValueCanonical           *string              `bson:"valueCanonical,omitempty" json:"valueCanonical,omitempty"`
+	ValueCode                *string              `bson:"valueCode,omitempty" json:"valueCode,omitempty"`
+	ValueDate                *string              `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
+	ValueDateTime            *string              `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
+	ValueDecimal             *float64             `bson:"valueDecimal,omitempty" json:"valueDecimal,omitempty"`
+	ValueId                  *string              `bson:"valueId,omitempty" json:"valueId,omitempty"`
+	ValueInstant             *string              `bson:"valueInstant,omitempty" json:"valueInstant,omitempty"`
+	ValueInteger             *int                 `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
+	ValueMarkdown            *string              `bson:"valueMarkdown,omitempty" json:"valueMarkdown,omitempty"`
+	ValueOid                 *string              `bson:"valueOid,omitempty" json:"valueOid,omitempty"`
+	ValuePositiveInt         *int                 `bson:"valuePositiveInt,omitempty" json:"valuePositiveInt,omitempty"`
+	ValueString              *string              `bson:"valueString,omitempty" json:"valueString,omitempty"`
+	ValueTime                *string              `bson:"valueTime,omitempty" json:"valueTime,omitempty"`
+	ValueUnsignedInt         *int                 `bson:"valueUnsignedInt,omitempty" json:"valueUnsignedInt,omitempty"`
+	ValueUri                 *string              `bson:"valueUri,omitempty" json:"valueUri,omitempty"`
+	ValueUrl                 *string              `bson:"valueUrl,omitempty" json:"valueUrl,omitempty"`
+	ValueUuid                *string              `bson:"valueUuid,omitempty" json:"valueUuid,omitempty"`
 	ValueAddress             *Address             `bson:"valueAddress,omitempty" json:"valueAddress,omitempty"`
 	ValueAge                 *Age                 `bson:"valueAge,omitempty" json:"valueAge,omitempty"`
 	ValueAnnotation          *Annotation          `bson:"valueAnnotation,omitempty" json:"valueAnnotation,omitempty"`
@@ -129,25 +129,25 @@ type TaskOutput struct {
 	Extension                []Extension          `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension        []Extension          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type                     *CodeableConcept     `bson:"type,omitempty" json:"type,omitempty"`
-	ValueBase64Binary        string               `bson:"valueBase64Binary,omitempty" json:"valueBase64Binary,omitempty"`
-	ValueBoolean             bool                 `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
-	ValueCanonical           string               `bson:"valueCanonical,omitempty" json:"valueCanonical,omitempty"`
-	ValueCode                string               `bson:"valueCode,omitempty" json:"valueCode,omitempty"`
-	ValueDate                string               `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
-	ValueDateTime            string               `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
-	ValueDecimal             float64              `bson:"valueDecimal,omitempty" json:"valueDecimal,omitempty"`
-	ValueId                  string               `bson:"valueId,omitempty" json:"valueId,omitempty"`
-	ValueInstant             string               `bson:"valueInstant,omitempty" json:"valueInstant,omitempty"`
-	ValueInteger             int                  `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
-	ValueMarkdown            string               `bson:"valueMarkdown,omitempty" json:"valueMarkdown,omitempty"`
-	ValueOid                 string               `bson:"valueOid,omitempty" json:"valueOid,omitempty"`
-	ValuePositiveInt         int                  `bson:"valuePositiveInt,omitempty" json:"valuePositiveInt,omitempty"`
-	ValueString              string               `bson:"valueString,omitempty" json:"valueString,omitempty"`
-	ValueTime                string               `bson:"valueTime,omitempty" json:"valueTime,omitempty"`
-	ValueUnsignedInt         int                  `bson:"valueUnsignedInt,omitempty" json:"valueUnsignedInt,omitempty"`
-	ValueUri                 string               `bson:"valueUri,omitempty" json:"valueUri,omitempty"`
-	ValueUrl                 string               `bson:"valueUrl,omitempty" json:"valueUrl,omitempty"`
-	ValueUuid                string               `bson:"valueUuid,omitempty" json:"valueUuid,omitempty"`
+	ValueBase64Binary        *string              `bson:"valueBase64Binary,omitempty" json:"valueBase64Binary,omitempty"`
+	ValueBoolean             *bool                `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
+	ValueCanonical           *string              `bson:"valueCanonical,omitempty" json:"valueCanonical,omitempty"`
+	ValueCode                *string              `bson:"valueCode,omitempty" json:"valueCode,omitempty"`
+	ValueDate                *string              `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
+	ValueDateTime            *string              `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
+	ValueDecimal             *float64             `bson:"valueDecimal,omitempty" json:"valueDecimal,omitempty"`
+	ValueId                  *string              `bson:"valueId,omitempty" json:"valueId,omitempty"`
+	ValueInstant             *string              `bson:"valueInstant,omitempty" json:"valueInstant,omitempty"`
+	ValueInteger             *int                 `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
+	ValueMarkdown            *string              `bson:"valueMarkdown,omitempty" json:"valueMarkdown,omitempty"`
+	ValueOid                 *string              `bson:"valueOid,omitempty" json:"valueOid,omitempty"`
+	ValuePositiveInt         *int                 `bson:"valuePositiveInt,omitempty" json:"valuePositiveInt,omitempty"`
+	ValueString              *string              `bson:"valueString,omitempty" json:"valueString,omitempty"`
+	ValueTime                *string              `bson:"valueTime,omitempty" json:"valueTime,omitempty"`
+	ValueUnsignedInt         *int                 `bson:"valueUnsignedInt,omitempty" json:"valueUnsignedInt,omitempty"`
+	ValueUri                 *string              `bson:"valueUri,omitempty" json:"valueUri,omitempty"`
+	ValueUrl                 *string              `bson:"valueUrl,omitempty" json:"valueUrl,omitempty"`
+	ValueUuid                *string              `bson:"valueUuid,omitempty" json:"valueUuid,omitempty"`
 	ValueAddress             *Address             `bson:"valueAddress,omitempty" json:"valueAddress,omitempty"`
 	ValueAge                 *Age                 `bson:"valueAge,omitempty" json:"valueAge,omitempty"`
 	ValueAnnotation          *Annotation          `bson:"valueAnnotation,omitempty" json:"valueAnnotation,omitempty"`
