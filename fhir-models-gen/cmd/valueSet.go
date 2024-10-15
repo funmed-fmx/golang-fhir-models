@@ -3,9 +3,10 @@ package cmd
 import (
 	"errors"
 	"fmt"
-	"github.com/dave/jennifer/jen"
-	"github.com/funmed-ally/golang-fhir-models/fhir-models-gen/fhir"
 	"strings"
+
+	"github.com/dave/jennifer/jen"
+	"github.com/funmed-fmx/golang-fhir-models/fhir-models-gen/fhir"
 )
 
 func generateValueSet(resources ResourceMap, valueSet fhir.ValueSet) (*jen.File, error) {

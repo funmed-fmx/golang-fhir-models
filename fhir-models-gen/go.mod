@@ -1,4 +1,4 @@
-module github.com/funmed-ally/golang-fhir-models/fhir-models-gen
+module github.com/funmed-fmx/golang-fhir-models/fhir-models-gen
 
 go 1.18
 
